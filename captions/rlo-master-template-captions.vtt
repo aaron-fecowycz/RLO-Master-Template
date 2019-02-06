@@ -1,0 +1,24 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.220 --> 00:00:03.130
+This is an example of how video
+
+00:00:03.200 --> 00:00:05.600
+can be incorporated in to the RLO template
+
+00:00:06.090 --> 00:00:09.000
+This video is 1920 by 1080 pixels
+
+00:00:09.050 --> 00:00:12.000
+and is rendered using the MP4 format
+
+00:00:12.190 --> 00:00:15.830
+The video should include both subtitles, as a subtitle track
+
+00:00:16.070 --> 00:00:18.120
+and also a textual copy of the transcript 
+
+00:00:18.120 --> 00:00:19.990
+which can appear below the video

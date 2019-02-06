@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="utf-8">
+<title>RLO Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#009bbd">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+<link rel="stylesheet" href="css/rlo-master.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="scripts/jquery.js"></script>
+<script src="scripts/bootstrap.js"></script>
+<script src="scripts/rlo-master.js"></script>
+<noscript>
+<link rel="stylesheet" href="css/rlo-master-no-js.css">
+</noscript>
+<script>
+$().ready(function(){
+
+$('.rec_panel').hide();
+$('.rec_but').click(function(event){
+
+$('.rec_panel').not('#'+$(this).attr('data-panel-id')).hide();
+$('#'+$(this).attr('data-panel-id')).toggle('slow');
+})
+
+});
+</script>
+<style>
+table a:link, table a:visited{
+text-decoration:underline;
+}
+table a:hover, table a:focus{
+font-weight:bold;
+}
+@media(max-width:767px) {
+.btn-prism{
+margin-bottom:3px;
+}	
+}
+</style>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57x57-precomposed.png">
+<link rel="icon" sizes="192x192" href="images/icon-192x192.png">
+</head>
+<body>
+<a id="doc_top"></a>
+<a class="sr-only sr-only-focusable" href="#content_start">Skip to main content</a>
+<header id="rlo_header">
+<a href="https://www.nottingham.ac.uk/helmopen" title="Health E-Learning and Media Team's website"><img src="images/helm-logo-no-strap-base.svg" alt="Health E-Learning and Media Team" id="helm_header_logo" class="hidden-xs" width="41" height="35"><img src="images/helm-logo-no-strap-header-white.svg" alt="Health E-Learning and Media Team" id="helm_header_logo2" class="visible-xs" width="47" height="40"></a>
+</header>
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+<!-- Button to close the overlay navigation -->
+<a href="#" class="closebtn" id="menu_close"><span class="glyphicon glyphicon-remove"></span></a>
+
+<!-- Overlay content -->
+<div class="overlay-content">
+<p>RLO Title</p>
+<ul role="menu" id="main_menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="section01.html">Section one</a></li>
+<li><a href="section02.html">Section two</a></li>
+<li><a href="section03.html">Section three</a></li>
+<li><a href="feedback.html">Feedback</a></li>
+<li class="active"><a href="resources.html">Resources</a></li> 
+</ul>
+</div>
+
+</div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<div id="main_menu_trigger">
+<a href="#"><span class="">menu</span> <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+</div>
+
+<div class="container">
+
+<main>
+<article>
+<a id="content_start"></a>
+
+
+<p class="rlo_title"><a href="index.html">RLO Title</a></p>
+<div id="ss_readalound_container"></div>
+<h1 id="page_title"><span>5.</span> Resources</h1><p>Please select any of the folllowing buttons to view further information related to this learning resource.</p>
+<!-- START larg screen resource buttons -->
+<div class="resource_nav_bar hidden-xs">
+<button id="one_btn" class="btn btn-info btn-sm rec_but" type="button" data-panel-id="rec_1">
+Glossary <span class="glyphicon glyphicon-chevron-down"></span>
+</button>
+<button id="two_btn" class="btn btn-info btn-sm rec_but" type="button" data-panel-id="rec_2">
+Resources <span class="glyphicon glyphicon-chevron-down"></span>
+</button> 
+<button id="six_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_6">
+Learning Outcomes <span class="glyphicon glyphicon-chevron-down"></span>
+</button> 
+<button id="seven_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_7">
+Credits <span class="glyphicon glyphicon-chevron-down"></span>
+</button> 
+<button id="eight_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_8">
+Terms of Use <span class="glyphicon glyphicon-chevron-down"></span>
+</button>
+</div>
+<!-- END larg screen resource buttons -->
+
+	
+	
+<!-- Glossary Section -->
+<button id="one2_btn" class="btn btn-info btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_1">
+Glossary <span class="glyphicon glyphicon-chevron-down"></span>
+</button>
+<div id="rec_1" class="rec_panel">
+<div class="alert alert-info">
+<h3>Glossary</h3>
+<table class="table table-bordered">
+<thead>
+<tr><th scope="col">Term</th><th scope="col">Definition</th></tr>
+</thead>
+<tbody>
+<tr><td>RLO</td><td><p>Reusable Learning Object</p></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<!-- Resources Section-->
+<button id="two2_btn" class="btn btn-info btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_2">
+Resources <span class="glyphicon glyphicon-chevron-down"></span>
+</button>
+<div id="rec_2" class="rec_panel">
+<div class="alert alert-info">
+<h3>Resources</h3>
+
+<table class="table table-bordered">
+<thead>
+<tr><th scope="col">Resource Title</th></tr>  
+</thead>
+
+<tbody>
+
+<tr><td><a href="#">Resource title / link</a></td></tr>
+
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+<button id="six2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_6">
+Learning Outcomes <span class="glyphicon glyphicon-chevron-down"></span>
+</button>
+<!-- Learning outcomes -->
+<div id="rec_6" class="rec_panel">  
+<div class="alert alert-info">
+<h3>Learning outcomes</h3>
+<p>By completing this resource you will be able to:</p>
+<p>Learning outcome to appear here</p>
+</div>
+</div>
+
+
+<!-- Credits -->
+<button id="seven2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_7">
+Credits <span class="glyphicon glyphicon-chevron-down"></span>
+</button>
+<div id="rec_7" class="rec_panel">  
+<div class="alert alert-info">
+<h3>This resource was developed by:</h3>
+
+<p>information of who developed this resource</p>
+
+<p>Project developers: First Name Last Name</p>
+
+</div>
+
+</div>
+
+<!-- Terms of Use -->
+<button id="eight2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_8">
+Terms of Use <span class="glyphicon glyphicon-chevron-down"></span>
+</button>
+<div id="rec_8" class="rec_panel">
+<div class="alert alert-info">
+<h3>Learning Object Copyright and Terms of Use</h3>
+<!-- taken from the helm open website - Keep as it is still relevent -->
+
+<p> All Learning Objects developed by the <a href="http://www.nottingham.ac.uk/healthsciences/index.aspx" target="_blank">University of Nottingham School of Health Sciences</a>, and their aggregate parts (eg text, animations), are copyright of the School of Health Sciences, University of Nottingham. Learning Objects are available for use under the <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</a> and the conditions below.</p>
+
+<h3>Terms of Use</h3>
+
+<p>Private individuals, and publicly-funded educational and other institutions, may link to and use the Learning Objects on this site without restriction for non-commercial educational purposes. Use of any Learning Objects for any commercial purpose, or by any profit-making commercial entity, is not permitted without our express permission. If you wish to use a Learning Object for any commercial, revenue-generating or non-educational purpose, you must contact us to negotiate terms of use and payment.</p>
+
+<p>We much prefer that you use this and other Learning Objects by linking to them on this website as:</p>
+<ul>
+<li>this ensures you're always using the most up-to-date version</li>
+<li>we gain data on usage of the Learning Objects, from access statistics and user feedback forms</li>
+</ul>
+
+
+<p>Local circumstances, such as network security policies, may constrain your ability to link to external sites, or may impair the usability of our objects. If you're unable to run our Learning Objects 'from source' for these or other reasons, please contact us with a brief explanation of your circumstances and we may provide you with specified Learning Objects as an IMS Content Package.</p>
+
+<h3>Modification</h3>
+
+<p>Modification to adapt Learning Objects to local circumstances is permitted, with the following restrictions:</p>
+<ol>
+<li>The modified version must clearly display the University of Nottingham logo, and the School copyright notice.</li>
+<li>The modified version must not be distributed outside the modifying institution without the express permission of the School.</li>
+</ol>
+
+<h3>Contacts</h3>
+
+<p>If you have any queries about our Learning Objects, please contact <a href="mailto:helm@nottingham.ac.uk">helm@nottingham.ac.uk</a></p> 
+
+<h3>Attribution</h3>
+
+<p>Please use the attribution below if you wish to refer to our learning objects. If you use Firefox, you can install the useful OpenAttribute add-on to allow you to easily copy and reference these and other materials marked as Creative Commons.</p>
+
+<p><img src="images/cc_88x31.png" alt="Creative Commons logo" width="88" height="31"> 
+Learning Objects for Healthcare by School of Health Sciences, University of Nottingham is licensed under a <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</a>.</p> 
+
+
+
+
+
+</div>
+
+</div>
+
+<!--END of resources Section -->
+
+
+
+
+
+
+
+<!-- START RLO content footer -->
+<footer>
+<div class="row">
+<div class="col-sm-6">
+
+</div>
+<div class="col-sm-6 text-right">
+<div id="rate_rlo"></div>
+<!-- <p>RLO released: 4th February, 2019</p> -->
+<p>Contact: <a href="mailto:helm@nottingham.ac.uk">helm@nottingham.ac.uk</a></p>
+<p><a href="http://creativecommons.org/licenses/by-nc/3.0/" title="Creative Commons licence."><img src="images/cc_88x31.png" alt="Creative Commons licence." width="88" height="31"></a> <a href="http://www.nottingham.ac.uk/helmopen/index.php/pages/view/terms-of-use" target="_blank">Terms of use</a></p>
+</div>
+</div>
+</footer>
+<!-- END RLO content footer -->
+
+</article>
+</main>
+</div>
+
+<!-- START doc top navigation -->
+<div class="visible-xs-block" id="doc_top_btn">
+<a href="#doc_top" class="btn btn-info btn-block">Document Top <span class="glyphicon glyphicon-chevron-up"></span></a>
+</div>
+<!-- END doc top navigation -->
+
+
+<!-- START Fixed base navigation bar -->
+<nav class="navbar navbar-inverse navbar-fixed-bottom" id="mobile_base_nav">
+<div class="progress_container">
+<div class="progressbar green"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+<span class="sr-only">100% Complete</span>
+</div>
+
+
+</div>
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-6 col-sm-2 text-left col-md-push-8">
+<a href="feedback.html" class="btn btn-mobile-base btn-block" id="previous_button"><span class="glyphicon glyphicon-chevron-left"></span> Previous </a>
+</div>
+<div class="col-xs-8 hidden-xs text-center col-md-pull-2" id="uon_base_logo">
+<!--<img src="images/uon-logo-blue-rev-base-2017.svg" alt="University of Nottingham United Kingdom, China, Malaysia" id="university_logo_white" width="95" height="35">-->
+</div>
+<div class="col-xs-6 col-sm-2">
+
+<a href="#" class="btn btn-mobile-base btn-block disabled"><span class="glyphicon glyphicon-ok" id="next_button"></span>RLO Complete</a>
+</div>
+</div>
+</div>
+</nav>
+
+<!-- END Fixed base navigation bar -->
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+/* CSS Document */
+#myNav{display:block;width:100%;height:auto;padding:0;margin-top:40px;}
+.overlay{display:block;position:relative;height:auto;top:auto;left:auto;}
+.overlay-content {display:block;position:relative;height:auto;top:auto;left:auto;margin:0;padding:0;}
+.overlay-content p{background-color:#fff;color:#000;font-weight:bold;margin:0;padding:10px 5px;}
+.rlo_title,#main_menu_trigger,#menu_close{display:none;}
+#rlo_header{background-color:#fff;z-index:3000;}
+@media(min-width:768px){
+	#myNav{margin-top:70px;}	
+}
