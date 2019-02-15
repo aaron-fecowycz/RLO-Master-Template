@@ -24,7 +24,7 @@ $().ready(function(){
 			
 			$narration_audio = $('.narration_audio').html();
 			
-			$('#ss_readalound_container').html('<div class="ss_container"><p>Narration</p>'+$narration_audio+'</div>');
+			$('#ss_readaloud_container').html('<div class="ss_container"><p>Narration</p>'+$narration_audio+'</div>');
 			
 			//console.log('we have narration');
 			
@@ -40,15 +40,15 @@ $().ready(function(){
 		if($( window ).width() < 768){
 			$narration_audio = $('.narration_audio').html();
 			if($narration_audio.length){
-				$('#ss_readalound_container').html('<div class="ss_container"><p>Narration</p>'+$narration_audio+'</div>');
+				$('#ss_readaloud_container').html('<div class="ss_container"><p>Narration</p>'+$narration_audio+'</div>');
 			}
 		}else{
-			$('#ss_readalound_container').html('');
+			$('#ss_readaloud_container').html('');
 		}
 	});
 	
 	// DEFINE variables
-	var audio_element = document.getElementById("read_alound_player");
+	var audio_element = document.getElementById("read_aloud_player");
 	var video_element = document.getElementById("video_player");
 	
 	// START main navigation trigger
@@ -176,8 +176,8 @@ $().ready(function(){
 			// begin the playback of the narration
 			var auto_narration = 1
 			//audio_element.play();
-			if($('#read_alound_player').length){
-				document.getElementById("read_alound_player").setAttribute('autoplay', 'autoplay');
+			if($('#read_aloud_player').length){
+				document.getElementById("read_aloud_player").setAttribute('autoplay', 'autoplay');
 				//console.log('I should auto play');
 			}
 		}	
