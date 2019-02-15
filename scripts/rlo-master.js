@@ -176,7 +176,7 @@ $().ready(function(){
 			// begin the playback of the narration
 			var auto_narration = 1
 			//audio_element.play();
-			if($('#read_aloud_player').length){
+			if($('#read_alound_player').length){
 				document.getElementById("read_alound_player").setAttribute('autoplay', 'autoplay');
 				//console.log('I should auto play');
 			}
