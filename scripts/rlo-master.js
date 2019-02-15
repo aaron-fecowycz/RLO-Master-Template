@@ -83,7 +83,7 @@ $().ready(function(){
 	// START pause video if narration started
 	///////////////////////////////////////////////////////////////////
 		
-	$('#read_alound_player').on('play', function() {
+	$('#read_aloud_player').on('play', function() {
 		if(video_element != null){
 			if(!$("#video_player").get(0).paused){
 				console.log(' video Not paused');
