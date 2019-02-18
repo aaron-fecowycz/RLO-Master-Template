@@ -234,7 +234,7 @@ h1 span{
 .read_aloud_player{
 	text-align:right;
 }
-#read_alound_player{
+#read_aloud_player{
 	height:30px;
 	background-color:#2D2D2D;
 }
@@ -285,7 +285,7 @@ h1 span{
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
    /* IE10+ specific styles go here */
-   #read_alound_player{
+   #read_aloud_player{
 	   width:250px;
 	   height:35px;
 	}  
@@ -459,10 +459,10 @@ footer a:link, footer a:visited{
 		margin-bottom:5px;
 	}
 	/* START footer narration inclusion */
-	ss_readalound_container{
+	ss_readaloud_container{
 		text-align:center;
 	}
-	#ss_readalound_container .ss_container{
+	#ss_readaloud_container .ss_container{
 		text-align:center;
 		border-top:1px dashed #ED337C;
 		border-bottom:1px dashed #ED337C;
@@ -472,13 +472,13 @@ footer a:link, footer a:visited{
 	.narration_audio{
 
 	}
-	#ss_readalound_container p{
+	#ss_readaloud_container p{
 		display:none;
 		text-align:center;
 		font-weight:bold;
 		color:#363636;
 	}
-	#ss_readalound_container audio{
+	#ss_readaloud_container audio{
 		display:block;
 		/*border:1px solid #000;*/
 		margin:15px auto 0 auto;
