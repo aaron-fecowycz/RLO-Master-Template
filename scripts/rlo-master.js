@@ -318,5 +318,40 @@ $().ready(function(){
 	// end number refers to the ID number within the RLO database needs to be updated when this ID number is known
 	$('#rate_rlo').html('<iframe src="https://www.nottingham.ac.uk/~ntzalf/rlo-specs/index.php/rating/home/62" style="border:none;height:20px;width:250px;"></iframe>');
 	// END feedback rating inclusion
+	
+	// START Privacy statement banner
+	var privacy_statement = '<div id="privacy_statement"><p><strong>The University of Nottingham\'s Health E-Learning and Media Team collects and holds some personal information about how you use our RLOs when you visit us. <a href="https://www.nottingham.ac.uk/helmopen/index.php/pages/view/rlo-privacy" class="btn btn-primary">See our policy</a> <a href="#" id="accept_privacy" class="btn btn-success">OK</a></p></div>';
+	
+	function getCookie(cname) {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+	if(getCookie('HELM_Open_Privacy') == ''){
+		$('#mobile_base_nav').prepend(privacy_statement);
+	}
+	
+	// END Privacy statement banner
+	// START Privacy acceptance
+	$('#accept_privacy').click(function(){
+		//alert('Pressed!');
+		var today = new Date();
+		var expire = new Date();
+		expire.setTime(today.getTime() + 3600000*24*360);
+		document.cookie='HELM_Open_Privacy' + "=" + 'accepted'+ ";path=/"+ ";expires="+expire.toGMTString();
+		$('#privacy_statement').hide("slow");
+		return false;
+	});
+	// END Privacy acceptance
 
 });
