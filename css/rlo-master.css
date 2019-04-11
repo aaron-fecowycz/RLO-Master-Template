@@ -205,10 +205,10 @@ fieldset[disabled] .btn-mobile-base.active {
 /* END Mobile Base Nave >= MD */
 .rlo_title{
 	margin-top:5px;
-	color:#7D7D7D;
+	color:#4e4e4e;
 }
 .rlo_title a:link, .rlo_title a:visited{
-	color:#7D7D7D;
+	color:#4e4e4e;
 }
 article{
 	background-color:#FAFAFA;
