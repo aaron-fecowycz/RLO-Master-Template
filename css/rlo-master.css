@@ -573,3 +573,9 @@ audio::-webkit-media-controls-time-remaining-display {
 padding-bottom:5px;
 }
 /* END Chrome audio playback styling */
+/* START Privacy Statement */
+#privacy_statement{
+padding-top:5px;
+color:#fff;
+}
+/* END Privacy Statement */
