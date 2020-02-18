@@ -19,6 +19,102 @@
 <script src="scripts/jquery.js"></script>
 <script src="scripts/bootstrap.js"></script>
 <script src="scripts/rlo-master.js"></script>
+<script>
+var previous_answers = '';
+var temp;
+$().ready(function(){
+
+
+$('#activity_function-buttons').hide();
+if(privacy_cookies == 1 && privacy_storage == 1){
+// START STORAGE is available
+$('#no_storage_warning').hide();
+$('#activity_function-buttons').show();
+// END STORAGE is available
+}else{
+//console.log('no storage enabled');
+}
+
+
+// START responding to the change in privacy controls
+//////////////////////////////////////////////////////
+$('#privacy_options_modal').on('hidden.bs.modal', function () {
+if(privacy_save == true){
+// Privacy has been closed (potentially saved) check for implications
+if(privacy_cookies == 1 && privacy_storage == 1){
+//console.log('privacy updated: storage enabled');
+$('#activity_function-buttons').show();
+$('#no_storage_warning').hide();
+}else{
+//console.log('privacy updated: no storage enabled');
+$('#activity_function-buttons').hide();
+$('#no_storage_warning').show();
+}
+}
+privacy_save = false;
+});
+//////////////////////////////////////////////////////
+// END responding to the change in privacy controls
+
+if(privacy_cookies == 1 && privacy_storage == 1){
+//console.log('Privacy Cookies and Storage are available!');
+if(storageAvailable('localStorage')){
+
+
+if(previous_answers != ''){
+$('#task').after('<div class="alert alert-info vspace-top"><h4>Your Previous Thoughts</h4>'+previous_answers+'</div>');
+//console.log(previous_answers);
+}
+
+if(localStorage.HELMOpen_RLO_template_activity != null){
+$('#task').val(localStorage.HELMOpen_RLO_template_activity);
+//console.log('previous_answer available');
+}
+}
+}
+
+$('#save_data').click(function(event){
+event.preventDefault();
+//alert('Save Clicked!');
+$('#task_warning').remove();
+$('#task_success').remove();
+//console.log($('#task').val());
+if($('#task').val() == ''){
+//alert('Nothing inputted for input 1');
+$( '<div id="task_warning" class="alert alert-danger"><p>Please provide your response</p></div>' ).insertBefore( "#task" );
+}else{
+if(privacy_cookies == 1 && privacy_storage == 1){
+var temp_val = $('#task').val();
+if(temp_val.length >10){
+if(storageAvailable('localStorage')){
+localStorage.HELMOpen_RLO_template_activity = $('#task').val();
+$('<div id="task_success" class="alert alert-success"><p>Your response has been successfully stored</p></div>').insertBefore('#task');
+}
+}else{
+$( '<div id="task_warning" class="alert alert-danger"><p>Your response needs to be a minimum of at least 10 characters.</p></div>' ).insertBefore( "#task" );
+}
+
+
+}
+}
+
+});
+
+
+$('#reset_data').click(function(event){
+event.preventDefault();
+localStorage.removeItem('HELMOpen_RLO_template_activity');
+$('#task_success').remove();
+$('#task_warning').remove();
+$('#task').val('');
+$('#delete_info').collapse('hide');
+$('#reset_info').collapse('hide');
+});	
+
+
+	
+});
+</script>	
 <noscript>
 <link rel="stylesheet" href="css/rlo-master-no-js.css">
 </noscript>
