@@ -322,7 +322,73 @@ footer a:link, footer a:visited{
 }
 
 
+/* START hide text toggle */
+#hide_text_control{
+	text-align:right;
+}
+/* The switch - the box around the slider */
+.switch {
+position: relative;
+display: inline-block;
+width: 30px;
+height: 17px;
+}
 
+/* Hide default HTML checkbox */
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* The slider */
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 13px;
+width: 13px;
+left: 2px;
+bottom: 2px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #2196F3;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(13px);
+-ms-transform: translateX(13px);
+transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+/* END hide text toggle */
 
 
 
@@ -485,7 +551,9 @@ footer a:link, footer a:visited{
 	}
 	/* END footer narration inclusion */
 	
-	
+	#hide_text_control{
+		text-align:center;
+	}
 	
 }
 
@@ -548,7 +616,7 @@ footer a:link, footer a:visited{
 
 /* END playback speed */
 
-/* START Chrome audio playback styling */
+/* START Chrome audio playback styling
 audio::-webkit-media-controls-timeline {
 background-color:transparent;
 padding:0 5px 10px 5px;
@@ -577,5 +645,28 @@ padding-bottom:5px;
 #privacy_statement{
 padding-top:5px;
 color:#fff;
+}
+/* END Privacy Statement */
+/* START Privacy Statement */
+#privacy_statement{
+padding-top:5px;
+color:#fff;
+}
+
+#main_menu_privacy_control{
+	margin-top:20px;
+	border-top:1px dashed #fff;
+	border-bottom:1px dashed #fff;
+	padding-top:10px 0 50px 0;
+}
+#main_menu_privacy_control p{
+	font-weight:normal;
+	font-size:1.4rem;
+}
+#main_menu_privacy_control p strong{
+	font-size:1.6em;
+}
+#main_menu_privacy_control .btn{
+	display:inline-block;
 }
 /* END Privacy Statement */
