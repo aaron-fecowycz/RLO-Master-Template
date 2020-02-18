@@ -19,6 +19,102 @@
 <script src="scripts/jquery.js"></script>
 <script src="scripts/bootstrap.js"></script>
 <script src="scripts/rlo-master.js"></script>
+<script>
+var previous_answers = '';
+var temp;
+$().ready(function(){
+
+
+$('#activity_function-buttons').hide();
+if(privacy_cookies == 1 && privacy_storage == 1){
+// START STORAGE is available
+$('#no_storage_warning').hide();
+$('#activity_function-buttons').show();
+// END STORAGE is available
+}else{
+//console.log('no storage enabled');
+}
+
+
+// START responding to the change in privacy controls
+//////////////////////////////////////////////////////
+$('#privacy_options_modal').on('hidden.bs.modal', function () {
+if(privacy_save == true){
+// Privacy has been closed (potentially saved) check for implications
+if(privacy_cookies == 1 && privacy_storage == 1){
+//console.log('privacy updated: storage enabled');
+$('#activity_function-buttons').show();
+$('#no_storage_warning').hide();
+}else{
+//console.log('privacy updated: no storage enabled');
+$('#activity_function-buttons').hide();
+$('#no_storage_warning').show();
+}
+}
+privacy_save = false;
+});
+//////////////////////////////////////////////////////
+// END responding to the change in privacy controls
+
+if(privacy_cookies == 1 && privacy_storage == 1){
+//console.log('Privacy Cookies and Storage are available!');
+if(storageAvailable('localStorage')){
+
+
+if(previous_answers != ''){
+$('#task').after('<div class="alert alert-info vspace-top"><h4>Your Previous Thoughts</h4>'+previous_answers+'</div>');
+//console.log(previous_answers);
+}
+
+if(localStorage.HELMOpen_RLO_template_activity != null){
+$('#task').val(localStorage.HELMOpen_RLO_template_activity);
+//console.log('previous_answer available');
+}
+}
+}
+
+$('#save_data').click(function(event){
+event.preventDefault();
+//alert('Save Clicked!');
+$('#task_warning').remove();
+$('#task_success').remove();
+//console.log($('#task').val());
+if($('#task').val() == ''){
+//alert('Nothing inputted for input 1');
+$( '<div id="task_warning" class="alert alert-danger"><p>Please provide your response</p></div>' ).insertBefore( "#task" );
+}else{
+if(privacy_cookies == 1 && privacy_storage == 1){
+var temp_val = $('#task').val();
+if(temp_val.length >10){
+if(storageAvailable('localStorage')){
+localStorage.HELMOpen_RLO_template_activity = $('#task').val();
+$('<div id="task_success" class="alert alert-success"><p>Your response has been successfully stored</p></div>').insertBefore('#task');
+}
+}else{
+$( '<div id="task_warning" class="alert alert-danger"><p>Your response needs to be a minimum of at least 10 characters.</p></div>' ).insertBefore( "#task" );
+}
+
+
+}
+}
+
+});
+
+
+$('#reset_data').click(function(event){
+event.preventDefault();
+localStorage.removeItem('HELMOpen_RLO_template_activity');
+$('#task_success').remove();
+$('#task_warning').remove();
+$('#task').val('');
+$('#delete_info').collapse('hide');
+$('#reset_info').collapse('hide');
+});	
+
+
+	
+});
+</script>	
 <noscript>
 <link rel="stylesheet" href="css/rlo-master-no-js.css">
 </noscript>
@@ -64,34 +160,38 @@
 <div class="row">
 <div class="col-md-6" id="text-component"> 
 <!-- START text column -->
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales, ante id sodales malesuada, justo metus semper lorem, sed finibus ipsum nulla eget enim. Sed tincidunt congue mi, ac sagittis nibh convallis vel. Pellentesque vestibulum at dolor gravida consectetur. Duis molestie purus orci, nec pharetra odio varius vitae. Duis ultrices accumsan ultrices. Duis nisl velit, efficitur in arcu a, viverra consequat orci. Vivamus id mollis mi, vel malesuada ligula. In in placerat urna. Ut sagittis libero at dui pretium imperdiet. Etiam urna mi, tristique eget tortor eu, posuere tincidunt metus.</p>
-
-<p>Quisque semper aliquet arcu. Suspendisse faucibus, velit consectetur tincidunt luctus, lacus ipsum suscipit erat, sit amet convallis risus metus ut magna. Maecenas ullamcorper quam fringilla lacus convallis efficitur. Aliquam nec ipsum orci. Pellentesque dictum massa non felis commodo vestibulum. Vestibulum placerat urna vel fringilla rutrum. Curabitur a aliquet ex, et eleifend ipsum. Curabitur tincidunt blandit odio, at ultricies libero porttitor quis. Vivamus consectetur iaculis lacus, sit amet mollis neque posuere sed.</p> 
+<p>Example of inclusion of a basic activity which makes use of local storage to store any input the user provides.</p>	
+<p>There's a small amount of code which interacts with the main RLO JavaScript file to respond to the user's decision to allow or prevent the use of cookies and local storage.</p>	
+<p>A message is displayed if permission hasn't been given additionally the save response controls are hidden.</p>
 <!-- END text column --> 
 </div>
 
 <div class="col-md-6" id="av-component"> 
 <!-- START media column -->
-<div  class="embed-responsive embed-responsive-16by9">
-<video class="img-responsive" controls id="video_player" poster="images/rlo-master-template-sample-video-poster.jpg">
-<source src="video/rlo-master-template-sample-video.mp4" type="video/mp4" />
-<track label="English" kind="subtitles" srclang="en" src="captions/rlo-master-template-captions.vtt">
-<p><a href="video/rlo-master-template-sample-video.mp4">Download the section video (MP4)</a></p>
-</video>
-</div>
-<br />
-<p class="text-right"><a class="btn btn-default btn-xs" role="button" data-toggle="collapse" href="#transcript2" aria-expanded="false" aria-controls="transcript2">View Transcript</a></p>
-
-<div class="collapse" id="transcript2" aria-expanded="false" role="region" aria-label="Transcript">
-<div class="well">
-
-<p class="lead">Transcript</p>
-<p>This is an example of how video can be incorporated in to the RLO template. This video is 1920 by 1080 pixels and is rendered using the MP4 format. The video should include both subtitles, as a subtitle track, and also a textual copy of the transcript which can appear below the video.</p>
-
-
-</div>
-</div>		
+<!-- START Activity example -->	
+<div id="no_storage_warning" class="alert alert-warning"><p>You have not given permission for the use of Cookies and Local Storage which would allow you to store your response to this activity. To grant permission for the use of Cookies and Local Storage within the &quot;<a href="#"  data-toggle="modal" data-target="#privacy_options_modal">User Privacy Settings</a>&quot; (also available within the resource &quot;menu&quot; panel).</p></div>		
 	
+<div class="text_container" id="act8">	
+<label for="task"><p><strong>How is you day going so far?</strong></p></label>
+<textarea id="task" class="form-control" rows="10" placeholder="Write your response here"></textarea>
+	
+	
+<div  id="activity_function-buttons">
+<div class="function_buttons text-center"><br /><a href="#" class="btn btn-success" id="save_data">Save</a> <button data-toggle="collapse" data-target="#reset_info" class="btn btn-danger "><span class="glyphicon glyphicon-remove"></span> Reset</button></div>
+
+<div id="delete_info" class="collapse alert alert-info">
+<p>By pressing the Delete button below you can remove your stored response.</p>
+<p><a href="#" class="btn btn-danger" id="delete_data" data-scenario-id="mova1_isaac">Delete</a></p>
+</div>
+</div>	
+<br><br>
+<div id="reset_info" class="collapse alert alert-info">
+<p>By pressing the <strong>Reset Data</strong> button below you can restart this activity. Importantly all stored responses will be deleted.</p>
+<p><a href="#" class="btn btn-danger" id="reset_data"><span class="glyphicon glyphicon-refresh"></span> Reset Data</a></p>
+</div>		
+
+</div>	
+<!-- END Activity example -->	
 <!-- END media column -->
 </div>
 </div>
