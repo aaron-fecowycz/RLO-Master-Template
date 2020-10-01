@@ -1,5 +1,13 @@
 RLO Master Template
 ========================
+
+Update: 20201001
+Author: Aaron Fecowycz
+
+Description:
+
+Modification to Aria labels of the main menu and modification to privacy settings modal. There's a couple of CSS modifications to increase the contrast ratio of a couple of elements.
+
 Update: 20200218
 Author: Aaron Fecowycz
 
