@@ -301,7 +301,7 @@ h1 span{
 }
 
 footer{
-	color:#7D7D7D;
+	color:#545454;
 	margin-top:50px;
 	margin-bottom:20px;
 	padding:20px 10px 0 0;
@@ -318,7 +318,7 @@ footer img{
 	margin-top:5px;
 }
 footer a:link, footer a:visited{
-	color:#428bca;
+	color:#2A5089;
 }
 
 /* START Info modals */
@@ -666,5 +666,8 @@ color:#fff;
 }
 #main_menu_privacy_control .btn{
 	display:inline-block;
+}
+#privacy_options_modal fieldset legend{
+	display:none;
 }
 /* END Privacy Statement */
