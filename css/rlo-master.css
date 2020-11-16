@@ -1,5 +1,8 @@
 /* CSS Document */
-@-ms-viewport { width: device-width; overflow-y: auto;}
+@-ms-viewport {
+	width: device-width;
+	overflow-y: auto;
+}
 body{
 	background-color:#FAFAFA;
 	background: url(../images/rlo-bg.jpg) no-repeat center center fixed; 
@@ -13,7 +16,6 @@ body{
 	left:50px;
 	top:15px;
 }
-
 #helm_header_logo2{
 	position:absolute;
 	left:2px;top:2px;
@@ -27,13 +29,11 @@ body{
     z-index: 1100; /* Sit on top */
     right: 0;
     top: 0;
-    /*background-color: rgb(0, 149, 161); /* Black fallback color */
-    background-color: rgba(0, 155, 189, 0.98); /* Black w/opacity */
+	background-color:#035E72;
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
    	clear: both;
 }
-
 /* Position the content inside the overlay */
 .overlay-content {
     position: relative;
@@ -56,9 +56,6 @@ body{
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
 }
-
-
-
 /* Position the close button (top right corner) */
 #menu_close{
     position: absolute;
@@ -69,7 +66,7 @@ body{
 	z-index:1200;
 }
 #menu_close:link, #menu_close:visited {
-	border:2px solid rgba(0, 155, 189, 0.98);
+	border:2px #035E72;
 	border-radius:5px;
 }
 #menu_close:hover {
@@ -84,7 +81,7 @@ body{
 	font-size:1.1em;
 }
 #main_menu li.active a:link, #main_menu li a:visited{
-	background-color:#666;
+	background-color:#595959;
 }
 #main_menu li a:hover, #main_menu li a:focus{
 	color: #fff;
@@ -102,29 +99,25 @@ body{
 	border:2px solid transparent;
 	border-radius:3px;
 	padding:2px 3px 0px 3px;
-	color: #747474;
+	color: #545454;
 	margin-right:4px;
 }
 #main_menu_trigger a:hover{
-	border:2px solid rgba(0, 155, 189, 0.98);
-	color: rgba(0, 155, 189, 0.98);
+	border:2px solid #035E72;
+	color: #035E72;
 	transition: 0.5s;
 }
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
+    .overlay a {
+		font-size: 20px
+	}
     .overlay .closebtn {
         font-size: 40px;
         top: 15px;
         right: 35px;
     }
 }
-
-
-
-
-
-
 /* START Mobile Base Nave >= MD */
 #mobile_base_nav{
 	text-align:center;
@@ -134,44 +127,36 @@ body{
 	backround-color:#000;
 	border-top:1px solid rgba(183,183,183,0.89);
 }
-/*#mobile_base_nav a:first-child{
-	margin-right:8%;
-}*/
 #uon_base_logo{
 	text-align:center;
-	/*margin-top:-2px;*/
 }
 #helm_base_logo{
 	margin-right:15px;
-	
 }
 .btn-mobile-base { 
 	  color: #ffffff; 
 	  background-color: #000000; 
 	  border:none;
-	border-color: #009BBD;
+	border-color: #006075;
 	padding:8px;
 }
 .btn-mobile-base:link,.btn-mobile-base:visited{
-	background-color:#009BBD;
+	background-color:#006075;
 }
-
 .btn-mobile-base:hover, 
 .btn-mobile-base:focus, 
 .btn-mobile-base:active, 
 .btn-mobile-base.active, 
 .open .dropdown-toggle.btn-mobile-base { 
 	color: #ffffff; 
-	background-color:#ed3c79;
-	border-color: #ed3c79; 
+	background-color:#A30F43;
+	border-color: #A30F43; 
 } 
- 
 .btn-mobile-base:active, 
 .btn-mobile-base.active, 
 .open .dropdown-toggle.btn-mobile-base { 
 	background-image: none; 
 } 
- 
 .btn-mobile-base.disabled, 
 .btn-mobile-base[disabled], 
 fieldset[disabled] .btn-mobile-base, 
@@ -196,11 +181,28 @@ fieldset[disabled] .btn-mobile-base.active {
 	background-color: #ffffff; 
 } 
 /* Progress bar */
-.progress_container{width:100%;height:3px;position:relative;background-color:#f1f1f1;margin-bottom:5px;}
-.progressbar{background-color:#757575;height:100%;position:absolute;line-height:inherit}
-.green,.hover_green:hover{color:#fff!important;background-color:#02D1E0!important}
-#next_button{margin-right:10px;margin-left:0;}
-#previous_button{margin-left:5px;}
+.progress_container{
+	width:100%;
+	height:3px;
+	position:relative;
+	background-color:#f1f1f1;
+	margin-bottom:5px;
+}
+.progressbar{
+	background-color:#757575;
+	height:100%;
+	position:absolute;
+	line-height:inherit;
+}
+.green,.hover_green:hover{
+	color:#000!important;background-color:#02D1E0!important
+}
+#next_button{
+	margin-right:10px;margin-left:0;
+}
+#previous_button{
+	margin-left:5px;
+}
 
 /* END Mobile Base Nave >= MD */
 .rlo_title{
@@ -217,10 +219,9 @@ article{
 }	
 article h1{
 	margin-top:10px;
-	/*border-bottom:1px solid #3276B1;*/
 }
 h1 span{
-	color:#009BBD;
+	color:#005C70;
 }
 .read_aloud{
 	opacity:0.6;
@@ -228,21 +229,17 @@ h1 span{
 	padding-top:10px;
 	margin-top:20px;
 	margin-bottom:20px;
-	/*background-color:rgba(62,135,212,1.00);
-	color:#fff;*/
 }
 .read_aloud_player{
 	text-align:right;
 }
 #read_aloud_player{
 	height:30px;
-	/*background-color:#2D2D2D;*/
 }
 /* START footer narration inclusion */
 .narration_audio p{
 	display:none;
 }
-
 .footer_naration{
 	color:#fff;
 	font-weight:bold;
@@ -252,20 +249,9 @@ h1 span{
 	flex-wrap:nowrap;
 	align-items: center;
 }
-
-#uon_base_logo{
-	
-}
-.narrtion_text{
-	
-}
-.narration_audio{
-	
-}
 /* END footer narration inclusion */
 .transcript_button{
 	width:95%;
-	
 	margin:10px auto 0 auto;
 	padding-top:15px;
 	padding-bottom:10px;
@@ -320,105 +306,93 @@ footer img{
 footer a:link, footer a:visited{
 	color:#2A5089;
 }
-
 /* START Info modals */
 .post-it{
-padding:20px;
-color:#fff;
-background-color:#179CBD;
+	padding:20px;
+	color:#fff;
+	background-color:#179CBD;
 }
 .post-it h3{
 	text-align:center;
 }
 .close_info{
-padding:20px;
-font-size:120%;
+	padding:20px;
+	font-size:120%;
 }
-
 .save_message{
-padding:20px;
-color:#fff;
-background-color:#53AD53;
+	padding:20px;
+	color:#fff;
+	background-color:#53AD53;
 }
 .save_message h3{
 	text-align:center;
 }
 .delete_message{
-padding:20px;
-color:#fff;
-background-color:#C93B37;
+	padding:20px;
+	color:#fff;
+	background-color:#C93B37;
 }
 .delete_message h3{
 	text-align:center;
 }
 /* END Info modals */
-
-
 /* START hide text toggle */
 #hide_text_control{
 	text-align:right;
 }
 /* The switch - the box around the slider */
 .switch {
-position: relative;
-display: inline-block;
-width: 30px;
-height: 17px;
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 17px;
 }
-
 /* Hide default HTML checkbox */
 .switch input {
-opacity: 0;
-width: 0;
-height: 0;
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
-
 /* The slider */
 .slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #ccc;
--webkit-transition: .4s;
-transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
-
 .slider:before {
-position: absolute;
-content: "";
-height: 13px;
-width: 13px;
-left: 2px;
-bottom: 2px;
-background-color: white;
--webkit-transition: .4s;
-transition: .4s;
+	position: absolute;
+	content: "";
+	height: 13px;
+	width: 13px;
+	left: 2px;
+	bottom: 2px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
-
 input:checked + .slider {
-background-color: #2196F3;
+	background-color: #2196F3;
 }
-
 input:focus + .slider {
-box-shadow: 0 0 1px #2196F3;
+	box-shadow: 0 0 1px #2196F3;
 }
-
 input:checked + .slider:before {
--webkit-transform: translateX(13px);
--ms-transform: translateX(13px);
-transform: translateX(13px);
+	-webkit-transform: translateX(13px);
+	-ms-transform: translateX(13px);
+	transform: translateX(13px);
 }
-
 /* Rounded sliders */
 .slider.round {
-border-radius: 34px;
+	border-radius: 34px;
 }
-
 .slider.round:before {
-border-radius: 50%;
+	border-radius: 50%;
 }
 /* END hide text toggle */
 
@@ -441,7 +415,6 @@ border-radius: 50%;
 		left:7px;
 		top:2px;
 	}
-	
 	#main_menu_trigger{
 		position:fixed;
 		z-index:1005;
@@ -468,10 +441,6 @@ border-radius: 50%;
 		padding-top:5px;
 		font-size:1.0em;
 	}
-	.overlay-content li{
-		
-
-	}
 	#main_menu, #main_menu li{
 		font-size:1.0em;
 	}
@@ -485,13 +454,10 @@ border-radius: 50%;
 		position:fixed;
 		top:0;
 		left:0;
-		background-color: rgba(0, 155, 189, 0.98);
+		background-color: #035E72;
 		z-index:1000;
 		height:45px;
 		width:100%;
-	}
-	.rlo_title{
-		
 	}
 	article{
 		border:none;
@@ -508,7 +474,6 @@ border-radius: 50%;
 	article h2{
 		text-align:center;
 		font-size:160%;
-		
 	}
 	#doc_top_btn{
 		margin:0px 10px 70px 10px;
@@ -535,20 +500,17 @@ border-radius: 50%;
 		margin-bottom:0;
 		padding-bottom:0;
 	}
-	#mobile_base_nav a{
-		/*width:45%;*/
-	}
 	#mobile_base_nav a:first-child{
 		margin-right:8%;
 	}
 	.btn-mobile-base { 
 		color: #ffffff; 
-		  background-color: #000000; 
-		  border:none;
-  		border-color: #09022B; 
+		background-color: #000000; 
+		border:none;
+		border-color: #09022B; 
 	} 
 	.feedback_form{
-	height:3600px;
+		height:3600px;
 	}
 	.ss_resource_btn{
 		margin-bottom:5px;
@@ -562,10 +524,6 @@ border-radius: 50%;
 		border-top:1px dashed #ED337C;
 		border-bottom:1px dashed #ED337C;
 		padding:5px;
-		
-	}
-	.narration_audio{
-
 	}
 	#ss_readaloud_container p{
 		display:none;
@@ -575,30 +533,21 @@ border-radius: 50%;
 	}
 	#ss_readaloud_container audio{
 		display:block;
-		/*border:1px solid #000;*/
 		margin:15px auto 0 auto;
 	}
 	/* END footer narration inclusion */
-	
 	#hide_text_control{
 		text-align:center;
-	}
-	
-	
+	}	
 }
-
 @media(min-width:768px){
-	
 	article{
-		/*border:40px solid rgba(179,179,179,0.89);*/
 		padding:20px 20px 40px 20px;
 		margin-top:60px;
 		-webkit-box-shadow: 10px 10px 5px 0px rgba(158,158,158,1);
 		-moz-box-shadow: 10px 10px 5px 0px rgba(158,158,158,1);
 		box-shadow: 10px 10px 5px 0px rgba(158,158,158,1);
 	}	
-	
-
 }
 @media(min-width:992px){
 	#uon_base_logo{
@@ -641,16 +590,12 @@ border-radius: 50%;
 	display:inline-block;
 	margin-top:30px;
 }
-
 /* END playback speed */
-
-
 /* START Privacy Statement */
 #privacy_statement{
-padding-top:5px;
-color:#fff;
+	padding-top:5px;
+	color:#fff;
 }
-
 #main_menu_privacy_control{
 	margin-top:20px;
 	border-top:1px dashed #fff;
