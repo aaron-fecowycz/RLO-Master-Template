@@ -1,6 +1,14 @@
 RLO Master Template
 ========================
 
+
+Update: 20201116
+Author: Aaron Fecowycz
+
+Description:
+
+Removal of bootstrap theme css file and linkage within HTML files, modification to the bootstrap css and the main css to improve contrast ratios to meet WCAG 2.1 AA requirements.
+
 Update: 20201001
 Author: Aaron Fecowycz
 
