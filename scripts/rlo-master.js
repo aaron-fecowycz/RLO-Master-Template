@@ -198,7 +198,7 @@ $().ready(function(){
 		
 	});
 
-	var playback_speed_controls = '<div class="text-center" id="adjust_playback_container"><form class="form" id="playback_speed_selection"><p>Adjust Playback Speed</p><label for="playback_rate">Adjust Audio/Video Playback Speed </label><div class="row"><div class="col-xs-2 col-lg-offset-2 text-right">Slower</div><div class="col-xs-7 col-lg-4"><input type="range"  name="playback_rate" id="playback_rate" min="0.5" max="1.75" step="any"></div><div class="col-xs-2">Faster</div></div><a href="#" id="playback_reset_btn" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-refresh"></span> Reset Playback Speed</a></form></div>';
+	var playback_speed_controls = '<div class="text-center" id="adjust_playback_container"><form class="form" id="playback_speed_selection"><h3>Adjust Playback Speed</h3><label for="playback_rate">Adjust Audio/Video Playback Speed </label><div class="row"><div class="col-xs-2 col-lg-offset-2 text-right">Slower</div><div class="col-xs-7 col-lg-4"><input type="range"  name="playback_rate" id="playback_rate" min="0.5" max="1.75" step="any"></div><div class="col-xs-2">Faster</div></div><a href="#" id="playback_reset_btn" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-refresh"></span> Reset Playback Speed</a></form></div>';
 
 
 	$( playback_speed_controls ).insertAfter( "#main_menu" );
@@ -368,14 +368,14 @@ $().ready(function(){
 	
 	
 	
-	var main_menu_privacy_control ='<div id="main_menu_privacy_control"><p><strong>HELM Open RLO Privacy Settings</strong></p><p>The University of Nottingham\'s Health E-Learning and Media Team collects and holds some personal information about how you use our RLOs when you visit us.</p><p>In  order to get the most out of this resource, please accept the use of cookies and LocalStorage within this resource\'s User Privacy Settings</p><p><a href="#" id="privacy_settings" class="btn btn-success privacy_settings">User Privacy Settings</a></p></div>';
+	var main_menu_privacy_control ='<div id="main_menu_privacy_control"><h3>HELM Open RLO Privacy Settings</h3><p>The University of Nottingham\'s Health E-Learning and Media Team collects and holds some personal information about how you use our RLOs when you visit us.</p><p>In order to get the most out of this resource, please accept the use of cookies and LocalStorage within this resource\'s User Privacy Settings</p><p><a href="#" id="privacy_settings" class="btn btn-success privacy_settings">User Privacy Settings</a></p></div>';
 	$(main_menu_privacy_control).insertAfter('#adjust_playback_container');
 	
 	// END Privacy Controls
 	
 	
 	// START Privacy statement banner
-	var privacy_statement = '<div id="privacy_statement"><p><strong>In  order to get the most out of this resource, please accept the use of cookies and LocalStorage within this resource\'s User Privacy Settings</strong><p><p><strong>The University of Nottingham\'s Health E-Learning and Media Team collects and holds some personal information about how you use our RLOs when you visit us.</strong> <a href="#" id="privacy_settings" class="btn btn-warning privacy_settings">User Privacy Settings</a> <a href="#" id="hide_privacy" class="btn btn-danger">Hide</a></p></div>';
+	var privacy_statement = '<div id="privacy_statement"><p><strong>In order to get the most out of this resource, please accept the use of cookies and LocalStorage within this resource\'s User Privacy Settings</strong><p><p><strong>The University of Nottingham\'s Health E-Learning and Media Team collects and holds some personal information about how you use our RLOs when you visit us.</strong> <a href="#" id="privacy_settings" class="btn btn-warning privacy_settings">User Privacy Settings</a> <a href="#" id="hide_privacy" class="btn btn-danger">Hide</a></p></div>';
 	
 	
 	if(get_cookie('HELM_Open_Privacy_Settings') == ''){
