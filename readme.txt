@@ -1,6 +1,10 @@
 RLO Master Template
 ========================
 
+Update: 20201214
+Author: Aaron Fecowycz
+
+Modification of HTML template to modify structure of navigation panel and inclusion of new ARIA current page labels. Reworking of resources section to create ARIA labels for active panel including associated JavaScript. Minor modification of associated CSS rules. 
 
 Update: 20201116
 Author: Aaron Fecowycz
