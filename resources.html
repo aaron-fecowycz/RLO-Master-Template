@@ -23,12 +23,19 @@
 </noscript>
 <script>
 $().ready(function(){
-
+	
 $('.rec_panel').hide();
 $('.rec_but').click(function(event){
+var button_name = $(this).attr('id');
+var panel_name = $(this).attr('data-panel-id');
 
+$('.rec_but').attr('aria-expanded','false');
 $('.rec_panel').not('#'+$(this).attr('data-panel-id')).hide();
-$('#'+$(this).attr('data-panel-id')).toggle('slow');
+$('#'+$(this).attr('data-panel-id')).toggle('slow',function(){ 
+	if($('#'+panel_name).is(":visible")){
+		$('#'+button_name).attr('aria-expanded','true');	   
+	}
+});
 })
 
 });
@@ -98,19 +105,19 @@ margin-bottom:3px;
 <h1 id="page_title"><span>5.</span> Resources</h1><p>Please select any of the folllowing buttons to view further information related to this learning resource.</p>
 <!-- START larg screen resource buttons -->
 <div class="resource_nav_bar hidden-xs">
-<button id="one_btn" class="btn btn-info btn-sm rec_but" type="button" data-panel-id="rec_1">
+<button id="one_btn" class="btn btn-info btn-sm rec_but" type="button" data-panel-id="rec_1" aria-expanded="false" aria-controls="rec_1">
 Glossary <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
-<button id="two_btn" class="btn btn-info btn-sm rec_but" type="button" data-panel-id="rec_2">
+<button id="two_btn" class="btn btn-info btn-sm rec_but" type="button" data-panel-id="rec_2" aria-expanded="false" aria-controls="rec_2">
 Resources <span class="glyphicon glyphicon-chevron-down"></span>
 </button> 
-<button id="six_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_6">
+<button id="six_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_6" aria-expanded="false" aria-controls="rec_6">
 Learning Outcomes <span class="glyphicon glyphicon-chevron-down"></span>
 </button> 
-<button id="seven_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_7">
+<button id="seven_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_7" aria-expanded="false" aria-controls="rec_7">
 Credits <span class="glyphicon glyphicon-chevron-down"></span>
 </button> 
-<button id="eight_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_8">
+<button id="eight_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_8" aria-expanded="false" aria-controls="rec_8">
 Terms of Use <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 </div>
@@ -119,7 +126,7 @@ Terms of Use <span class="glyphicon glyphicon-chevron-down"></span>
 	
 	
 <!-- Glossary Section -->
-<button id="one2_btn" class="btn btn-info btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_1">
+<button id="one2_btn" class="btn btn-info btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_1" aria-expanded="false" aria-controls="rec_1">
 Glossary <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 <div id="rec_1" class="rec_panel">
@@ -138,7 +145,7 @@ Glossary <span class="glyphicon glyphicon-chevron-down"></span>
 
 
 <!-- Resources Section-->
-<button id="two2_btn" class="btn btn-info btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_2">
+<button id="two2_btn" class="btn btn-info btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_2" aria-expanded="false" aria-controls="rec_2">
 Resources <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 <div id="rec_2" class="rec_panel">
@@ -161,7 +168,7 @@ Resources <span class="glyphicon glyphicon-chevron-down"></span>
 </div>
 </div>
 
-<button id="six2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_6">
+<button id="six2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_6" aria-expanded="false" aria-controls="rec_6">
 Learning Outcomes <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 <!-- Learning outcomes -->
@@ -175,7 +182,7 @@ Learning Outcomes <span class="glyphicon glyphicon-chevron-down"></span>
 
 
 <!-- Credits -->
-<button id="seven2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_7">
+<button id="seven2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_7" aria-expanded="false" aria-controls="rec_7">
 Credits <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 <div id="rec_7" class="rec_panel">  
@@ -191,7 +198,7 @@ Credits <span class="glyphicon glyphicon-chevron-down"></span>
 </div>
 
 <!-- Terms of Use -->
-<button id="eight2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_8">
+<button id="eight2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_8" aria-expanded="false" aria-controls="rec_8">
 Terms of Use <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 <div id="rec_8" class="rec_panel">
