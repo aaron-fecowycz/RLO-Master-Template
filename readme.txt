@@ -1,6 +1,12 @@
 RLO Master Template
 ========================
 
+Update: 20210429
+Author: Aaron Fecowycz
+
+Modified the theme colour from original #009bbd to new #035e72. This will mtch thetheme colour to the top bar colouration.
+
+
 Update: 20201214
 Author: Aaron Fecowycz
 
