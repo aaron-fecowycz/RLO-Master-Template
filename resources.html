@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>RLO Title</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#035e72">
+<meta name="theme-color" content="#173597">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/rlo-master.css">
 
@@ -23,7 +23,9 @@
 </noscript>
 <script>
 $().ready(function(){
-	
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
 $('.rec_panel').hide();
 $('.rec_but').click(function(event){
 var button_name = $(this).attr('id');
@@ -31,22 +33,51 @@ var panel_name = $(this).attr('data-panel-id');
 
 $('.rec_but').attr('aria-expanded','false');
 $('.rec_panel').not('#'+$(this).attr('data-panel-id')).hide();
-$('#'+$(this).attr('data-panel-id')).toggle('slow',function(){ 
+$('#'+$(this).attr('data-panel-id')).toggle('slow',function(){
 	if($('#'+panel_name).is(":visible")){
-		$('#'+button_name).attr('aria-expanded','true');	   
+		$('#'+button_name).attr('aria-expanded','true');
 	}
 });
-})
+});
 
+if(urlParams.has('terms') == true){
+	// feature to allow direct linkage to terms and conditions  resources.html?terms=true
+	$('#rec_8').show();
+	$('#eight2_btn').attr('aria-expanded','true');
+}
+if(urlParams.has('resources') == true){
+	// feature to allow direct linkage to resources resources.html?resources=true
+	$('#rec_2').show();
+	$('#two2_btn').attr('aria-expanded','true');
+}
 });
 </script>
 <style>
 table a:link, table a:visited{
-text-decoration:underline;
+	text-decoration:underline;
+	display:block;
+	padding:2px;
 }
 table a:hover, table a:focus{
-font-weight:bold;
+	background-color:#0000B3;
+	color:#fff;
+	display:block;
+	padding:2px;
 }
+	#rec_6 ul{
+		margin:15px 0;
+	}
+	#rec_6 ul li{
+		margin:0 0 5px 0;
+	}
+	.credits p{
+		margin:5px 0 10px 0;
+	}
+	.base_spacing{padding-bottom:20px;}
+	#next_button{
+		color:#fff!important;
+		opacity:1;
+	}
 </style>
 
 <link rel="shortcut icon" href="images/favicon.ico">
@@ -57,36 +88,36 @@ font-weight:bold;
 <link rel="icon" sizes="192x192" href="images/icon-192x192.png">
 </head>
 <body>
+<div id="rlo_container">
 <span id="doc_top"></span>
 <a class="sr-only sr-only-focusable" href="#content_start">Skip to main content</a>
 <header id="rlo_header">
-<a href="https://www.nottingham.ac.uk/helmopen" title="Health E-Learning and Media Team's website"><img src="images/helm-logo-no-strap-base.svg" alt="Health E-Learning and Media Team" id="helm_header_logo" class="hidden-xs" width="41" height="35"><img src="images/helm-logo-no-strap-header-white.svg" alt="Health E-Learning and Media Team" id="helm_header_logo2" class="visible-xs" width="47" height="40"></a>
+<!-- Use any element to open/show the overlay navigation menu -->
+<div id="main_menu_trigger"> <a href="#"><span class="">menu</span> <span class="glyphicon glyphicon-menu-hamburger"></span></a> </div>
+<a href="https://www.nottingham.ac.uk/helmopen" title="Health E-Learning and Media Team's website"><img src="images/helm-logo-no-strap-header-white.svg" alt="Health E-Learning and Media Team" id="helm_header_logo" width="52" height="44"></a>
 </header>
 <!-- The overlay -->
-<nav id="myNav" class="overlay" aria-labelledby="main-menu-label">
-
-<!-- Button to close the overlay navigation -->
-<a href="#" class="closebtn" id="menu_close"><span class="glyphicon glyphicon-remove"></span><span class="sr-only"> Close Menu</span></a>
-
+<nav id="myNav" class="overlay container-fluid" aria-labelledby="main-menu-label">
 <!-- Overlay content -->
 <div class="overlay-content">
+<div class="row">
+<div class="col-md-offset-2 col-md-4" role="navigation">
 <h2 id="main-menu-label">Main Menu</h2>
-<ul role="navigation" aria-label="Main resource navigation" id="main_menu">
+<ul aria-label="Main resource navigation" id="main_menu">
 <li><a href="index.html">Home</a></li>
 <li><a href="section01.html">Section one</a></li>
 <li><a href="section02.html">Section two</a></li>
 <li><a href="section03.html">Section three</a></li>
 <li><a href="feedback.html">Feedback</a></li>
-<li class="active"><a href="resources.html" aria-current="page">Resources</a></li> 
+<li class="active"><a href="resources.html" aria-current="page">Resources</a></li>
 </ul>
 </div>
-
-</nav>
-
-<!-- Use any element to open/show the overlay navigation menu -->
-<div id="main_menu_trigger">
-<a href="#"><span class="">menu</span> <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+<div class="col-md-offset-1 col-md-3" id="feature_controls"></div>
 </div>
+</div>
+<!-- Button to close the overlay navigation -->
+<a href="#" class="closebtn" id="menu_close">Close <span class="glyphicon glyphicon-remove"></span><span class="sr-only"> Close menu</span></a>
+</nav>
 
 <div class="container">
 
@@ -100,28 +131,28 @@ font-weight:bold;
 <h1 id="page_title"><span>5.</span> Resources</h1><p>Please select any of the folllowing buttons to view further information related to this learning resource.</p>
 <!-- START larg screen resource buttons -->
 <div class="resource_nav_bar hidden-xs">
-<button id="one_btn" class="btn btn-info btn-sm rec_but" type="button" data-panel-id="rec_1" aria-expanded="false" aria-controls="rec_1">
+<button id="one_btn" class="btn btn-primary btn-sm rec_but" type="button" data-panel-id="rec_1" aria-expanded="false" aria-controls="rec_1">
 Glossary <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
-<button id="two_btn" class="btn btn-info btn-sm rec_but" type="button" data-panel-id="rec_2" aria-expanded="false" aria-controls="rec_2">
+<button id="two_btn" class="btn btn-primary btn-sm rec_but" type="button" data-panel-id="rec_2" aria-expanded="false" aria-controls="rec_2">
 Resources <span class="glyphicon glyphicon-chevron-down"></span>
-</button> 
-<button id="six_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_6" aria-expanded="false" aria-controls="rec_6">
+</button>
+<button id="six_btn" class="btn btn-sm rec_but btn-primary" type="button" data-panel-id="rec_6" aria-expanded="false" aria-controls="rec_6">
 Learning Outcomes <span class="glyphicon glyphicon-chevron-down"></span>
-</button> 
-<button id="seven_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_7" aria-expanded="false" aria-controls="rec_7">
+</button>
+<button id="seven_btn" class="btn btn-sm rec_but btn-primary" type="button" data-panel-id="rec_7" aria-expanded="false" aria-controls="rec_7">
 Credits <span class="glyphicon glyphicon-chevron-down"></span>
-</button> 
-<button id="eight_btn" class="btn btn-sm rec_but btn-info" type="button" data-panel-id="rec_8" aria-expanded="false" aria-controls="rec_8">
+</button>
+<button id="eight_btn" class="btn btn-sm rec_but btn-primary" type="button" data-panel-id="rec_8" aria-expanded="false" aria-controls="rec_8">
 Terms of Use <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 </div>
 <!-- END larg screen resource buttons -->
 
-	
-	
+
+
 <!-- Glossary Section -->
-<button id="one2_btn" class="btn btn-info btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_1" aria-expanded="false" aria-controls="rec_1">
+<button id="one2_btn" class="btn btn-primary btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_1" aria-expanded="false" aria-controls="rec_1">
 Glossary <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 <div id="rec_1" class="rec_panel">
@@ -140,7 +171,7 @@ Glossary <span class="glyphicon glyphicon-chevron-down"></span>
 
 
 <!-- Resources Section-->
-<button id="two2_btn" class="btn btn-info btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_2" aria-expanded="false" aria-controls="rec_2">
+<button id="two2_btn" class="btn btn-primary btn-sm rec_but visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_2" aria-expanded="false" aria-controls="rec_2">
 Resources <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 <div id="rec_2" class="rec_panel">
@@ -149,7 +180,7 @@ Resources <span class="glyphicon glyphicon-chevron-down"></span>
 
 <table class="table table-bordered">
 <thead>
-<tr><th scope="col">Resource Title</th></tr>  
+<tr><th scope="col">Resource Title</th></tr>
 </thead>
 
 <tbody>
@@ -163,11 +194,11 @@ Resources <span class="glyphicon glyphicon-chevron-down"></span>
 </div>
 </div>
 
-<button id="six2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_6" aria-expanded="false" aria-controls="rec_6">
+<button id="six2_btn" class="btn btn-sm rec_but btn-primary visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_6" aria-expanded="false" aria-controls="rec_6">
 Learning Outcomes <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 <!-- Learning outcomes -->
-<div id="rec_6" class="rec_panel">  
+<div id="rec_6" class="rec_panel">
 <div class="alert alert-info">
 <h2>Learning outcomes</h2>
 <p>By completing this resource you will be able to:</p>
@@ -177,10 +208,10 @@ Learning Outcomes <span class="glyphicon glyphicon-chevron-down"></span>
 
 
 <!-- Credits -->
-<button id="seven2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_7" aria-expanded="false" aria-controls="rec_7">
+<button id="seven2_btn" class="btn btn-sm rec_but btn-primary visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_7" aria-expanded="false" aria-controls="rec_7">
 Credits <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
-<div id="rec_7" class="rec_panel">  
+<div id="rec_7" class="rec_panel">
 <div class="alert alert-info">
 <h2>This resource was developed by:</h2>
 
@@ -193,7 +224,7 @@ Credits <span class="glyphicon glyphicon-chevron-down"></span>
 </div>
 
 <!-- Terms of Use -->
-<button id="eight2_btn" class="btn btn-sm rec_but btn-info visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_8" aria-expanded="false" aria-controls="rec_8">
+<button id="eight2_btn" class="btn btn-sm rec_but btn-primary visible-xs-block btn-block ss_resource_btn" type="button" data-panel-id="rec_8" aria-expanded="false" aria-controls="rec_8">
 Terms of Use <span class="glyphicon glyphicon-chevron-down"></span>
 </button>
 <div id="rec_8" class="rec_panel">
@@ -226,14 +257,14 @@ Terms of Use <span class="glyphicon glyphicon-chevron-down"></span>
 
 <h3>Contacts</h3>
 
-<p>If you have any queries about our Learning Objects, please contact <a href="mailto:helm@nottingham.ac.uk">helm@nottingham.ac.uk</a></p> 
+<p>If you have any queries about our Learning Objects, please contact <a href="mailto:helm@nottingham.ac.uk">helm@nottingham.ac.uk</a></p>
 
 <h3>Attribution</h3>
 
 <p>Please use the attribution below if you wish to refer to our learning objects. If you use Firefox, you can install the useful OpenAttribute add-on to allow you to easily copy and reference these and other materials marked as Creative Commons.</p>
 
-<p><img src="images/cc_88x31.png" alt="Creative Commons logo" width="88" height="31"> 
-Learning Objects for Healthcare by School of Health Sciences, University of Nottingham is licensed under a <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</a>.</p> 
+<p><img src="images/cc_88x31.png" alt="Creative Commons logo" width="88" height="31">
+Learning Objects for Healthcare by School of Health Sciences, University of Nottingham is licensed under a <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</a>.</p>
 
 
 
@@ -260,8 +291,9 @@ Learning Objects for Healthcare by School of Health Sciences, University of Nott
 <div class="col-sm-6 text-right">
 <div id="rate_rlo"></div>
 <!-- <p>RLO released: 4th February, 2019</p> -->
-<p>Contact: <a href="mailto:helm@nottingham.ac.uk">helm@nottingham.ac.uk</a></p>
-<p><a href="http://creativecommons.org/licenses/by-nc/3.0/" title="Creative Commons licence."><img src="images/cc_88x31.png" alt="Creative Commons licence." width="88" height="31"></a> <a href="http://www.nottingham.ac.uk/helmopen/index.php/pages/view/terms-of-use" target="_blank">Terms of use</a></p>
+<p>Contact: <a href="mailto:helm@nottingham.ac.uk" title="Email the project team">helm@nottingham.ac.uk</a></p>
+<p><a href="https://www.nottingham.ac.uk/helmopen/index.php/pages/view/accessibility-statement">Accessibility Statement</a></p>
+<p><a href="http://creativecommons.org/licenses/by-nc/3.0/" title="Creative Commons licence."><img src="images/cc_88x31.png" alt="Creative Commons licence." width="88" height="31"></a> <a href="resources.html?terms=true" target="_blank">Terms of use</a></p>
 </div>
 </div>
 </footer>
@@ -273,13 +305,14 @@ Learning Objects for Healthcare by School of Health Sciences, University of Nott
 
 <!-- START doc top navigation -->
 <div class="visible-xs-block" id="doc_top_btn">
-<a href="#doc_top" class="btn btn-info btn-block">Document Top <span class="glyphicon glyphicon-chevron-up"></span></a>
+<a href="#doc_top" class="btn btn-primary btn-block">Document Top <span class="glyphicon glyphicon-chevron-up"></span></a>
 </div>
 <!-- END doc top navigation -->
 
 
 <!-- START Fixed base navigation bar -->
-<nav class="navbar navbar-inverse navbar-fixed-bottom" id="mobile_base_nav">
+<nav id="mobile_base_nav">
+<div id="nav_container">
 <div class="progress_container">
 <div class="progressbar green"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
 <span class="sr-only">100% Complete</span>
@@ -289,22 +322,22 @@ Learning Objects for Healthcare by School of Health Sciences, University of Nott
 </div>
 <div class="container-fluid">
 <div class="row">
-<div class="col-xs-6 col-sm-2 text-left col-md-push-8">
+<div class="hidden-xs text-center col-sm-8 col-sm-push-2 col-md-push-2 col-lg-push-0" id="uon_base_logo">
+<img src="images/uon-logo-blue-rev-base-2017.svg" alt="University of Nottingham United Kingdom, China, Malaysia" id="university_logo_white" width="95" height="35">
+</div>
+<div  class="col-xs-6 col-sm-2 text-left col-lg-2 col-sm-pull-8 col-lg-pull-0">
 <a href="feedback.html" class="btn btn-mobile-base btn-block" id="previous_button"><span class="glyphicon glyphicon-chevron-left"></span> Previous </a>
 </div>
-<div class="col-xs-8 hidden-xs text-center col-md-pull-2" id="uon_base_logo">
-<!--<img src="images/uon-logo-blue-rev-base-2017.svg" alt="University of Nottingham United Kingdom, China, Malaysia" id="university_logo_white" width="95" height="35">-->
-</div>
 <div class="col-xs-6 col-sm-2">
-
 <a href="#" class="btn btn-mobile-base btn-block disabled"><span class="glyphicon glyphicon-ok" id="next_button"></span>RLO Complete</a>
 </div>
 </div>
 </div>
+</div><!-- Close nav contianer -->
 </nav>
 
 <!-- END Fixed base navigation bar -->
-
+</div> <!-- Close RLO contianer -->
 
 
 
