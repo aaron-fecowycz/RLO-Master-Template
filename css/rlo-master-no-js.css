@@ -1,10 +1,11 @@
 /* CSS Document */
-#myNav{display:block;width:100%;height:auto;padding:0;margin-top:40px;}
+header#rlo_header{clip-path:none;background-color:#1637A1;background-image:none;}
+@media (min-width: 992px) {#myNav .row .col-md-offset-2{margin-left:33.333333%!important;}}
+#main-menu-label{padding-top:0px!important;margin:0;}
+#myNav{display:block;width:100%;height:auto;padding:0;margin-top:0px!important;}
 .overlay{display:block;position:relative;height:auto;top:auto;left:auto;}
 .overlay-content {display:block;position:relative;height:auto;top:auto;left:auto;margin:0;padding:0;}
 .overlay-content p{background-color:#fff;color:#000;font-weight:bold;margin:0;padding:10px 5px;}
 .rlo_title,#main_menu_trigger,#menu_close{display:none;}
 #rlo_header{background-color:#fff;z-index:3000;}
-@media(min-width:768px){
-	#myNav{margin-top:70px;}	
-}
+@media(min-width:768px){#myNav{margin-top:70px;}}

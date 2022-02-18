@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>RLO Title</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#035e72">
+<meta name="theme-color" content="#173597">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/rlo-master.css">
 
@@ -30,30 +30,37 @@
 
 </head>
 <body>
+<div id="rlo_container">
 <span id="doc_top"></span> <a class="sr-only sr-only-focusable" href="#content_start">Skip to main content</a>
-<header id="rlo_header"> <a href="https://www.nottingham.ac.uk/helmopen" title="Health E-Learning and Media Team's website"><img src="images/helm-logo-no-strap-base.svg" alt="Health E-Learning and Media Team" id="helm_header_logo" class="hidden-xs" width="41" height="35"><img src="images/helm-logo-no-strap-header-white.svg" alt="Health E-Learning and Media Team" id="helm_header_logo2" class="visible-xs" width="47" height="40"></a> </header>
+<header id="rlo_header">
+<!-- Use any element to open/show the overlay navigation menu -->
+<div id="main_menu_trigger"> <a href="#"><span class="">menu</span> <span class="glyphicon glyphicon-menu-hamburger"></span></a> </div>
+<a href="https://www.nottingham.ac.uk/helmopen" title="Health E-Learning and Media Team's website"><img src="images/helm-logo-no-strap-header-white.svg" alt="Health E-Learning and Media Team" id="helm_header_logo" width="52" height="44"></a>
+</header>
 <!-- The overlay -->
 <nav id="myNav" class="overlay" aria-labelledby="main-menu-label">
-
-<!-- Button to close the overlay navigation --> 
-<a href="#" class="closebtn" id="menu_close"><span class="glyphicon glyphicon-remove"></span><span class="sr-only"> Close Menu</span></a> 
-
 <!-- Overlay content -->
-<div class="overlay-content">
+<div class="overlay-content container-fluid">
+<div class="row">
+<div class="col-md-offset-2 col-md-4" role="navigation">
 <h2 id="main-menu-label">Main Menu</h2>
-<ul role="navigation" aria-label="Main resource navigation" id="main_menu">
+<ul aria-label="Main resource navigation" id="main_menu">
 <li><a href="index.html">Home</a></li>
 <li class="active"><a href="section01.html" aria-current="page">Section one</a></li>
 <li><a href="section02.html">Section two</a></li>
 <li><a href="section03.html">Section three</a></li>
 <li><a href="feedback.html">Feedback</a></li>
-<li><a href="resources.html">Resources</a></li> 
+<li><a href="resources.html">Resources</a></li>
 </ul>
 </div>
+<div class="col-md-offset-1 col-md-3" id="feature_controls"></div>
+</div>
+</div>
+<!-- Button to close the overlay navigation -->
+<a href="#" class="closebtn" id="menu_close">Close <span class="glyphicon glyphicon-remove"></span><span class="sr-only"> Close menu</span></a>
 </nav>
 
-<!-- Use any element to open/show the overlay navigation menu -->
-<div id="main_menu_trigger"> <a href="#"><span class="">menu</span> <span class="glyphicon glyphicon-menu-hamburger"></span></a> </div>
+
 <div class="container">
 <main>
 <article> <a id="content_start"></a>
@@ -61,18 +68,18 @@
 <div id="ss_readaloud_container"></div>
 <h1 id="page_title"><span>1.</span> Section one</h1>
 <div class="row">
-<div class="col-md-6" id="text-component"> 
+<div class="col-md-6" id="text-component">
 <!-- START text column -->
 
 
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales, ante id sodales malesuada, justo metus semper lorem, sed finibus ipsum nulla eget enim. Sed tincidunt congue mi, ac sagittis nibh convallis vel. Pellentesque vestibulum at dolor gravida consectetur. Duis molestie purus orci, nec pharetra odio varius vitae. Duis ultrices accumsan ultrices. Duis nisl velit, efficitur in arcu a, viverra consequat orci. Vivamus id mollis mi, vel malesuada ligula. In in placerat urna. Ut sagittis libero at dui pretium imperdiet. Etiam urna mi, tristique eget tortor eu, posuere tincidunt metus.</p>
 
-<p>Quisque semper aliquet arcu. Suspendisse faucibus, velit consectetur tincidunt luctus, lacus ipsum suscipit erat, sit amet convallis risus metus ut magna. Maecenas ullamcorper quam fringilla lacus convallis efficitur. Aliquam nec ipsum orci. Pellentesque dictum massa non felis commodo vestibulum. Vestibulum placerat urna vel fringilla rutrum. Curabitur a aliquet ex, et eleifend ipsum. Curabitur tincidunt blandit odio, at ultricies libero porttitor quis. Vivamus consectetur iaculis lacus, sit amet mollis neque posuere sed.</p> 
+<p>Quisque semper aliquet arcu. Suspendisse faucibus, velit consectetur tincidunt luctus, lacus ipsum suscipit erat, sit amet convallis risus metus ut magna. Maecenas ullamcorper quam fringilla lacus convallis efficitur. Aliquam nec ipsum orci. Pellentesque dictum massa non felis commodo vestibulum. Vestibulum placerat urna vel fringilla rutrum. Curabitur a aliquet ex, et eleifend ipsum. Curabitur tincidunt blandit odio, at ultricies libero porttitor quis. Vivamus consectetur iaculis lacus, sit amet mollis neque posuere sed.</p>
 
-<!-- END text column --> 
+<!-- END text column -->
 </div>
-<div class="col-md-6" id="av-component"> 
+<div class="col-md-6" id="av-component">
 <!-- START media column -->
 
 <div  class="embed-responsive embed-responsive-16by9">
@@ -88,67 +95,51 @@
 <div class="collapse" id="transcript2" aria-expanded="false" role="region" aria-label="Transcript">
 <div class="well">
 
-<p class="lead">Transcript</p>
+<h2>Video transcript</h2>
 <p>This is an example of how video can be incorporated in to the RLO template. This video is 1920 by 1080 pixels and is rendered using the MP4 format. The video should include both subtitles, as a subtitle track, and also a textual copy of the transcript which can appear below the video.</p>
 
 
 </div>
-</div>	
-	
-<!-- END media column --> 
-</div>
 </div>
 
-<!-- START RLO content footer -->
-<footer>
-<div class="row">
-<div class="col-sm-6">
-&nbsp;
-</div>
-<div class="col-sm-6 text-right"> 
-<!-- <script>document.write('<iframe src="https://www.nottingham.ac.uk/~ntzalf/rlo-specs/index.php/rating/home/62" style="border:none;height:20px;width:250px;"></iframe>');</script>  -->
-<!-- <p>RLO released: 1st January, 2004</p>
-<p>Contact: <a href="mailto:helm@nottingham.ac.uk">helm@nottingham.ac.uk</a></p>
-<p><a href="http://creativecommons.org/licenses/by-nc/3.0/" title="Creative Commons licence."><img src="images/cc_88x31.png" alt="Creative Commons licence." width="88" height="31"></a> <a href="http://www.nottingham.ac.uk/helmopen/index.php/pages/view/terms-of-use" target="_blank">Terms of use</a></p> -->
+<!-- END media column -->
 </div>
 </div>
-</footer>
-<!-- END RLO content footer --> 
 
 </article>
 </main>
 </div>
 
 <!-- START doc top navigation -->
-<div class="visible-xs-block" id="doc_top_btn"> <a href="#doc_top" class="btn btn-info btn-block">Document Top <span class="glyphicon glyphicon-chevron-up"></span></a> </div>
-<!-- END doc top navigation --> 
+<div class="visible-xs-block" id="doc_top_btn"> <a href="#doc_top" class="btn btn-primary btn-block">Document Top <span class="glyphicon glyphicon-chevron-up"></span></a> </div>
+<!-- END doc top navigation -->
 
 <!-- START Fixed base navigation bar -->
-<nav class="navbar navbar-inverse navbar-fixed-bottom" id="mobile_base_nav">
+<nav id="mobile_base_nav">
+<div id="nav_container">
 <div class="progress_container">
 <div class="progressbar green"  role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> <span class="sr-only">20% Complete</span> </div>
 </div>
 <div class="container-fluid">
 <div class="row">
-<div class="col-xs-6 col-sm-2 text-left col-md-push-8"> <a href="index.html" class="btn btn-mobile-base btn-block" id="previous_button"><span class="glyphicon glyphicon-chevron-left"></span> Previous </a> </div>
-<div class="col-xs-8 hidden-xs text-center col-md-pull-2" id="uon_base_logo"> 
+<div class="hidden-xs text-center col-sm-8 col-sm-push-2 col-md-push-2 col-lg-push-0" id="uon_base_logo">
 <!--<img src="images/uon-logo-blue-rev-base-2017.svg" alt="University of Nottingham United Kingdom, China, Malaysia" id="university_logo_white" width="95" height="35">-->
-
 <div class="narration_audio">
 <audio id="read_aloud_player" class="audio_player" controls>
 <source src="audio/rlo-master-template-sample-narration.mp3" type="audio/mp3" />
 <p><a href="audio/rlo-master-template-sample-narration.mp3">Narration audio (MP3)</a></p>
 </audio>
 </div>
-
 </div>
+<div  class="col-xs-6 col-sm-2 text-left col-lg-2 col-sm-pull-8 col-lg-pull-0"> <a href="index.html" class="btn btn-mobile-base btn-block" id="previous_button"><span class="glyphicon glyphicon-chevron-left"></span> Previous </a> </div>
 <div class="col-xs-6 col-sm-2"> <a href="section02.html" class="btn btn-mobile-base btn-block" id="next_button">Next <span class="glyphicon glyphicon-chevron-right"></span></a> </div>
 </div>
 </div>
+</div><!-- Close nav contianer -->
 </nav>
 
-<!-- END Fixed base navigation bar --> 
-
+<!-- END Fixed base navigation bar -->
+</div> <!-- Close RLO contianer -->
 
 
 </body>

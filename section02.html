@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>RLO Title</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#035e72">
+<meta name="theme-color" content="#173597">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/rlo-master.css">
 
@@ -108,12 +108,12 @@ $('#task_warning').remove();
 $('#task').val('');
 $('#delete_info').collapse('hide');
 $('#reset_info').collapse('hide');
-});	
-
-
-	
 });
-</script>	
+
+
+
+});
+</script>
 <noscript>
 <link rel="stylesheet" href="css/rlo-master-no-js.css">
 </noscript>
@@ -126,30 +126,36 @@ $('#reset_info').collapse('hide');
 
 </head>
 <body>
+<div id="rlo_container">
 <span id="doc_top"></span> <a class="sr-only sr-only-focusable" href="#content_start">Skip to main content</a>
-<header id="rlo_header"> <a href="https://www.nottingham.ac.uk/helmopen" title="Health E-Learning and Media Team's website"><img src="images/helm-logo-no-strap-base.svg" alt="Health E-Learning and Media Team" id="helm_header_logo" class="hidden-xs" width="41" height="35"><img src="images/helm-logo-no-strap-header-white.svg" alt="Health E-Learning and Media Team" id="helm_header_logo2" class="visible-xs" width="47" height="40"></a> </header>
+<header id="rlo_header">
+<!-- Use any element to open/show the overlay navigation menu -->
+<div id="main_menu_trigger"> <a href="#"><span class="">menu</span> <span class="glyphicon glyphicon-menu-hamburger"></span></a> </div>
+<a href="https://www.nottingham.ac.uk/helmopen" title="Health E-Learning and Media Team's website"><img src="images/helm-logo-no-strap-header-white.svg" alt="Health E-Learning and Media Team" id="helm_header_logo" width="52" height="44"></a>
+</header>
 <!-- The overlay -->
 <nav id="myNav" class="overlay" aria-labelledby="main-menu-label">
-
-<!-- Button to close the overlay navigation --> 
-<a href="#" class="closebtn" id="menu_close"><span class="glyphicon glyphicon-remove"></span><span class="sr-only"> Close Menu</span></a> 
-
 <!-- Overlay content -->
-<div class="overlay-content">
+<div class="overlay-content container-fluid">
+<div class="row">
+<div class="col-md-offset-2 col-md-4" role="navigation">
 <h2 id="main-menu-label">Main Menu</h2>
-<ul role="navigation" aria-label="Main resource navigation" id="main_menu">
+<ul aria-label="Main resource navigation" id="main_menu">
 <li><a href="index.html">Home</a></li>
 <li><a href="section01.html">Section one</a></li>
 <li class="active"><a href="section02.html" aria-current="page">Section two</a></li>
 <li><a href="section03.html">Section three</a></li>
 <li><a href="feedback.html">Feedback</a></li>
-<li><a href="resources.html">Resources</a></li> 
+<li><a href="resources.html">Resources</a></li>
 </ul>
 </div>
+<div class="col-md-offset-1 col-md-3" id="feature_controls"></div>
+</div>
+</div>
+<!-- Button to close the overlay navigation -->
+<a href="#" class="closebtn" id="menu_close">Close <span class="glyphicon glyphicon-remove"></span><span class="sr-only"> Close menu</span></a>
 </nav>
 
-<!-- Use any element to open/show the overlay navigation menu -->
-<div id="main_menu_trigger"> <a href="#"><span class="">menu</span> <span class="glyphicon glyphicon-menu-hamburger"></span></a> </div>
 <div class="container">
 <main>
 <article> <a id="content_start"></a>
@@ -157,24 +163,24 @@ $('#reset_info').collapse('hide');
 <div id="ss_readaloud_container"></div>
 <h1 id="page_title"><span>2. </span>Section two</h1>
 <div class="row">
-<div class="col-md-6" id="text-component"> 
+<div class="col-md-6" id="text-component">
 <!-- START text column -->
-<p>Example of inclusion of a basic activity which makes use of local storage to store any input the user provides.</p>	
-<p>There's a small amount of code which interacts with the main RLO JavaScript file to respond to the user's decision to allow or prevent the use of cookies and local storage.</p>	
+<p>Example of inclusion of a basic activity which makes use of local storage to store any input the user provides.</p>
+<p>There's a small amount of code which interacts with the main RLO JavaScript file to respond to the user's decision to allow or prevent the use of cookies and local storage.</p>
 <p>A message is displayed if permission hasn't been given additionally the save response controls are hidden.</p>
-<!-- END text column --> 
+<!-- END text column -->
 </div>
 
-<div class="col-md-6" id="av-component"> 
+<div class="col-md-6" id="av-component">
 <!-- START media column -->
-<!-- START Activity example -->	
-<div id="no_storage_warning" class="alert alert-warning"><p>You have not given permission for the use of Cookies and Local Storage which would allow you to store your response to this activity. To grant permission for the use of Cookies and Local Storage within the &quot;<a href="#"  data-toggle="modal" data-target="#privacy_options_modal">User Privacy Settings</a>&quot; (also available within the resource &quot;menu&quot; panel).</p></div>		
-	
-<div class="text_container" id="act8">	
-<label for="task"><p><strong>How is you day going so far?</strong></p></label>
+<!-- START Activity example -->
+<div id="no_storage_warning" class="alert alert-warning"><p>You have not given permission for the use of Cookies and Local Storage which would allow you to store your response to this activity. To grant permission for the use of Cookies and Local Storage within the &quot;<a href="#"  data-toggle="modal" data-target="#privacy_options_modal">User Privacy Settings</a>&quot; (also available within the resource &quot;menu&quot; panel).</p></div>
+
+<div class="text_container" id="act8">
+<label for="task"><strong>How is your day going so far?</strong></label>
 <textarea id="task" class="form-control" rows="10" placeholder="Write your response here"></textarea>
-	
-	
+
+
 <div  id="activity_function-buttons">
 <div class="function_buttons text-center"><br /><a href="#" class="btn btn-success" id="save_data">Save</a> <button data-toggle="collapse" data-target="#reset_info" class="btn btn-danger "><span class="glyphicon glyphicon-remove"></span> Reset</button></div>
 
@@ -182,68 +188,54 @@ $('#reset_info').collapse('hide');
 <p>By pressing the Delete button below you can remove your stored response.</p>
 <p><a href="#" class="btn btn-danger" id="delete_data" data-scenario-id="mova1_isaac">Delete</a></p>
 </div>
-</div>	
+</div>
 <br><br>
 <div id="reset_info" class="collapse alert alert-info">
 <p>By pressing the <strong>Reset Data</strong> button below you can restart this activity. Importantly all stored responses will be deleted.</p>
 <p><a href="#" class="btn btn-danger" id="reset_data"><span class="glyphicon glyphicon-refresh"></span> Reset Data</a></p>
-</div>		
+</div>
 
-</div>	
-<!-- END Activity example -->	
+</div>
+<!-- END Activity example -->
 <!-- END media column -->
 </div>
 </div>
 
-<!-- START RLO content footer -->
-<footer>
-<div class="row">
-<div class="col-sm-6">
-&nbsp;
-</div>
-<div class="col-sm-6 text-right"> 
-<!-- <script>document.write('<iframe src="https://www.nottingham.ac.uk/~ntzalf/rlo-specs/index.php/rating/home/62" style="border:none;height:20px;width:250px;"></iframe>');</script> -->
-<!-- <p>RLO released: 1st January, 2004</p>
-<p>Contact: <a href="mailto:helm@nottingham.ac.uk">helm@nottingham.ac.uk</a></p>
-<p><a href="http://creativecommons.org/licenses/by-nc/3.0/" title="Creative Commons licence."><img src="images/cc_88x31.png" alt="Creative Commons licence." width="88" height="31"></a> <a href="http://www.nottingham.ac.uk/helmopen/index.php/pages/view/terms-of-use" target="_blank">Terms of use</a></p> -->
-</div>
-</div>
-</footer>
-<!-- END RLO content footer --> 
 
 </article>
 </main>
 </div>
 
 <!-- START doc top navigation -->
-<div class="visible-xs-block" id="doc_top_btn"> <a href="#doc_top" class="btn btn-info btn-block">Document Top <span class="glyphicon glyphicon-chevron-up"></span></a> </div>
-<!-- END doc top navigation --> 
+<div class="visible-xs-block" id="doc_top_btn"> <a href="#doc_top" class="btn btn-primary btn-block">Document Top <span class="glyphicon glyphicon-chevron-up"></span></a> </div>
+<!-- END doc top navigation -->
 
 <!-- START Fixed base navigation bar -->
-<nav class="navbar navbar-inverse navbar-fixed-bottom" id="mobile_base_nav">
+<nav id="mobile_base_nav">
+<div id="nav_container">
 <div class="progress_container">
 <div class="progressbar green"  role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete</span> </div>
 </div>
 <div class="container-fluid">
 <div class="row">
-<div class="col-xs-6 col-sm-2 text-left col-md-push-8"> <a href="section01.html" class="btn btn-mobile-base btn-block" id="previous_button"><span class="glyphicon glyphicon-chevron-left"></span> Previous </a> </div>
-<div class="col-xs-8 hidden-xs text-center col-md-pull-2" id="uon_base_logo"> 
+<div class="hidden-xs text-center col-sm-8 col-sm-push-2 col-md-push-2 col-lg-push-0" id="uon_base_logo">
 <!--<img src="images/uon-logo-blue-rev-base-2017.svg" alt="University of Nottingham United Kingdom, China, Malaysia" id="university_logo_white" width="95" height="35">-->
-
 <div class="narration_audio">
 <audio id="read_aloud_player" class="audio_player" controls>
 <source src="audio/rlo-master-template-sample-narration.mp3" type="audio/mp3" />
 <a href="audio/rlo-master-template-sample-narration.mp3">Narration audio (MP3)</a>
-</audio> 
+</audio>
 </div>
 </div>
+<div  class="col-xs-6 col-sm-2 text-left col-lg-2 col-sm-pull-8 col-lg-pull-0"> <a href="section01.html" class="btn btn-mobile-base btn-block" id="previous_button"><span class="glyphicon glyphicon-chevron-left"></span> Previous </a> </div>
 <div class="col-xs-6 col-sm-2"> <a href="section03.html" class="btn btn-mobile-base btn-block" id="next_button">Next <span class="glyphicon glyphicon-chevron-right"></span></a> </div>
 </div>
 </div>
+</div><!-- Close nav contianer -->
 </nav>
 
-<!-- END Fixed base navigation bar --> 
-
+<!-- END Fixed base navigation bar -->
+</div> <!-- Close RLO contianer -->
 
 </body>
 </html>
