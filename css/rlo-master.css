@@ -14,7 +14,7 @@ body{
 }
 header{
 	display:block;
-	background-color:#9D0668;
+	background-color:#1637A1;
 	clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
 	/*background-image: linear-gradient(45deg, #6303B1, #FF52BD);
 	background-image: linear-gradient(45deg, #6303B1, #9D0668);*/
@@ -83,7 +83,7 @@ margin:5px 0 10px 5px;
 	z-index:1200;
 }
 #menu_close:link, #menu_close:visited {
-	border:2px #035E72;
+	border:2px #1637A1;
 	border-radius:5px;
 }
 #menu_close:hover {
@@ -568,7 +568,7 @@ input:checked + .slider:before {
 		position:fixed;
 		top:0;
 		left:0;
-		background-color: #035E72;
+		background-color: #1637A1;
 		z-index:1000;
 		height:45px;
 		width:100%;
