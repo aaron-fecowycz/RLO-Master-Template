@@ -125,6 +125,7 @@ margin:5px 0 10px 5px;
 	padding:2px 5px 0px 5px;
 	color: #fff;
 	margin-top:0px;
+	background-color:#1B2A6E;
 }
 #main_menu_trigger a:hover, #main_menu_trigger a:focus{
 	background-color:#FF8000;
