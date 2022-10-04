@@ -344,7 +344,7 @@ $().ready(function(){
 
 	// START feedback rating inclusion
 	// end number refers to the ID number within the RLO database needs to be updated when this ID number is known
-	$('#rate_rlo').html('<iframe src="https://www.nottingham.ac.uk/~ntzalf/rlo-specs/index.php/rating/home/1" style="border:none;height:20px;width:250px;" title="Rate this resource"></iframe>');
+	$('#rate_rlo').html('<iframe src="https://www.nottingham.ac.uk/~ntzalf/rlo-specs/index.php/rating/home/1" title="Rate this resource feature" style="border:none;height:20px;width:250px;" title="Rate this resource"></iframe>');
 	// END feedback rating inclusion
 
 
@@ -377,14 +377,14 @@ $().ready(function(){
 
 
 
-	var main_menu_privacy_control ='<div id="main_menu_privacy_control" class="text-left"><h3>HELM Open RLO Privacy Settings</h3><p>The University of Nottingham\'s Health E-Learning and Media Team collects and holds some personal information about how you use our RLOs when you visit us.</p><p>In order to get the most out of this resource, please accept the use of cookies and LocalStorage within this resource\'s User Privacy Settings</p><p class="text-center"><a href="#" id="privacy_settings" class="btn btn-success privacy_settings">User Privacy Settings</a></p></div>';
+	var main_menu_privacy_control ='<div id="main_menu_privacy_control" class="text-left"><h3>HELM Open RLO Privacy Settings</h3><p>The University of Nottingham\'s Health E-Learning and Media Team collects and holds some personal information about how you use our RLOs when you visit us.</p><p>In order to get the most out of this resource, please accept the use of cookies and LocalStorage within this resource\'s User Privacy Settings</p><p class="text-center"><a href="#" id="privacy_settings_base" class="btn btn-success privacy_settings">User Privacy Settings</a></p></div>';
 	$(main_menu_privacy_control).insertAfter('#adjust_playback_container');
 
 	// END Privacy Controls
 
 
 	// START Privacy statement banner
-	var privacy_statement = '<div id="privacy_statement"><p><strong>In  order to get the most out of this resource, please accept the use of cookies within this resource\'s User Privacy Settings</strong> <a href="#" id="privacy_settings" class="btn btn-warning privacy_settings">User Privacy Settings</a><p></div>';
+	var privacy_statement = '<div id="privacy_statement"><p><strong>In order to get the most out of this resource, please accept the use of cookies within this resource\'s User Privacy Settings</strong> <a href="#" id="privacy_settings" class="btn btn-warning privacy_settings">User Privacy Settings</a><p></div>';
 
 
 	if(get_cookie('HELM_Open_Privacy_Settings') == ''){
