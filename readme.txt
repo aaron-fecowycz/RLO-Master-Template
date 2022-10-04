@@ -1,5 +1,11 @@
 RLO Master Template
 ========================
+
+Minor Update: 20221004
+Author: Aaron Fecowycz
+
+Addition of aria-label attribute to progress bar throughout. Modification of the ID attribute on the privacy setting button on base privacy statement to maintain unique naming requirements. Addition of title attribute to the rating feature iFrame.
+
 Major Update: 20220218
 Author: Aaron Fecowycz
 
