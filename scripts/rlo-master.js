@@ -344,7 +344,7 @@ $().ready(function(){
 
 	// START feedback rating inclusion
 	// end number refers to the ID number within the RLO database needs to be updated when this ID number is known
-	$('#rate_rlo').html('<iframe src="https://www.nottingham.ac.uk/~ntzalf/rlo-specs/index.php/rating/home/1" title="Rate this resource feature" style="border:none;height:20px;width:250px;" title="Rate this resource"></iframe>');
+	$('#rate_rlo').html('<iframe src="https://www.nottingham.ac.uk/~ntzalf/rlo-specs/index.php/rating/home/1" title="Rate this resource feature" style="border:none;height:20px;width:250px;"></iframe>');
 	// END feedback rating inclusion
 
 
