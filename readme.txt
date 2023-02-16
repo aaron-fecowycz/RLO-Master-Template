@@ -4,6 +4,8 @@ RLO Master Template
 Minor Update: 20230216
 Author: Aaron Fecowycz
 
+Description:
+
 Inclusion of dark mode feature. This includes the development of JavaScript, CSS and SVG icons to enable the template to respond to the users dark mode / light mode preferences or allow the user to override these preferences and save this choice for return visits to the resource. Dark mode styling has been created to provide a good user experience enhancing usability and accessibility.
 
 Minor Update: 20221004
