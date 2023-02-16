@@ -35,11 +35,11 @@ function set_cookie(cookie_name, cookie_value, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires="+d.toUTCString();
-  document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/";
+  document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";SameSite=Strict;Secure;path=/";
 }
 
 function delete_cookie( name ) {
-  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;SameSite=Strict;Secure;path=/';
 }
 
 // DEFINE variables
@@ -56,6 +56,45 @@ var playback_speed = 1;
 //var auto_narration = 0;
 var hide_text = 0;
 var analytics_code ='<div id="analytics_code"><!-- Your Analytics Code Here --></div>';
+
+var browser_colour_scheme = 'automatic';
+var user_colour_scheme = 'automatic';
+var colour_scheme_to_use ='';
+
+const display_mode = document.querySelector("html");
+
+// START light/drak mode script
+const dark_mode_media_query = window.matchMedia('(prefers-color-scheme: dark)');
+dark_mode_media_query.addEventListener('change', (e) => {
+const dark_mode_on = e.matches;
+if(dark_mode_on == true){display_mode.setAttribute('class','dark');
+}else{
+display_mode.setAttribute('class','light');
+}
+});
+
+if(get_cookie('HELM_Open_Theme') != ''){
+  user_colour_scheme = get_cookie('HELM_Open_Theme');
+}
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      browser_colour_scheme = 'dark';
+}
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      browser_colour_scheme = 'light';
+}
+
+if(user_colour_scheme != false){
+  if(user_colour_scheme == 'automatic'){
+    colour_scheme_to_use = browser_colour_scheme;
+  }else{
+    colour_scheme_to_use = user_colour_scheme;
+  }
+}else{
+  colour_scheme_to_use = browser_colour_scheme;
+}
+display_mode.setAttribute('class',colour_scheme_to_use);
+
+// END light/drak mode script
 
 
 $().ready(function(){
@@ -106,12 +145,60 @@ $().ready(function(){
 			$('#ss_readaloud_container').html('');
 		}
 	});
+/*
+  //START responding to the light/dark mode environment
 
+  var theme_controls = '<div class="text-center" id="theme_container"><form class="form" id="theme_selection"><h3>Switch between light and dark modes</h3><label class="theme-switch" for="theme_checkbox"><span>'+theme_message+'</span> <input type="checkbox" id="theme_checkbox"'+theme_tick+' /></label><span role="alert" class="hidden" aria-live="polite" id="light_dark_notification">'+color_scheme+' theme enabled, the button is now</span></form></div>';
+*/
+
+// START new them mode environment
+var theme_controls = '<div class="text-center" id="theme_container"><form class="form" id="theme_selection"><h3>Switch between light and dark modes</h3><fieldset id="dark_mode_selector"><legend>Theme selection</legend><div class="dark_mode_option"><input type="radio" id="theme_dark" name="theme_mode" value="dark"';
+if(user_colour_scheme == 'dark'){theme_controls = theme_controls + ' checked="checked"';}
+theme_controls = theme_controls+'><label for="theme_dark"><span><img src="images/theme-dark-mode-icon.svg" width="25px" height="25px" alt="" role="presentation" /></span> Dark Mode</label></div><div class="dark_mode_option"><input type="radio" id="theme_automatic" name="theme_mode" value="auto"';
+if(user_colour_scheme != 'light' && user_colour_scheme != 'dark'){theme_controls = theme_controls + ' checked="checked"';}
+theme_controls = theme_controls+'><label for="theme_automatic"><span><img src="images/theme-automatic-mode-icon.svg" width="25px" height="25px" alt="" role="presentation" /></span> Automatic</label></div><div class="dark_mode_option"><input type="radio" id="theme_light" name="theme_mode" value="light"';
+if(user_colour_scheme == 'light'){theme_controls = theme_controls + ' checked="checked"';}
+theme_controls = theme_controls+'><label for="theme_light"><span><img src="images/theme-light-mode-icon.svg" width="25px" height="25px" alt="" role="presentation" /></span> Light Mode</label></div></fieldset></form></div>';
+
+// END new theme mode environment
+
+
+	$('#feature_controls').html(playback_speed_controls);
+
+// START new theme mode theme_selection
+$(document).on("change", 'input[type="radio"][name="theme_mode"]' , function() {
+    switch($(this).val()){
+      case 'light':
+        $('html').attr('class','light');
+        if(privacy_cookies == 1){
+          set_cookie('HELM_Open_Theme','light',365);
+        }
+      break;
+      case 'dark':
+        $('html').attr('class','dark');
+        if(privacy_cookies == 1){
+          set_cookie('HELM_Open_Theme','dark',365);
+        }
+      break;
+      case 'auto':
+      if(privacy_cookies == 1){set_cookie('HELM_Open_Theme','automatic',365);}
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          //color_scheme = 'dark';
+          $('html').attr('class','dark');
+      }else{
+            //color_scheme = 'light';
+            $('html').attr('class','light');
+      }
+      break;
+    }
+    //alert( $(this).val() );
+});
+// END new themee mode selection
 
   //START limit tabbing within navigation panel once triggered
 
   // add all the elements inside modal which you want to make focusable
-  const  focusableElements = '[href], input, [tabindex]:not([tabindex="-1"])';
+  const focusableElements = '[href], input, [tabindex]:not([tabindex="-1"])';
   const modal = document.querySelector('#myNav'); // select the modal by it's id
 
   const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
@@ -239,7 +326,7 @@ $().ready(function(){
 
 	});
 
-	var playback_speed_controls = '<h2>Resource Features</h2><div class="text-center" id="adjust_playback_container"><form class="form" id="playback_speed_selection"><h3>Adjust Playback Speed</h3><label for="playback_rate">Adjust Audio/Video Playback Speed </label><div class="row"><div class="col-xs-2 col-lg-offset-2 text-right">Slower</div><div class="col-xs-7 col-lg-4"><input type="range"  name="playback_rate" id="playback_rate" min="0.5" max="1.75" step="any"></div><div class="col-xs-2">Faster</div></div><a href="#" id="playback_reset_btn" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-refresh"></span> Reset Playback Speed</a></form></div>';
+	var playback_speed_controls = '<h2>Resource Features</h2>'+theme_controls+'<div class="text-center" id="adjust_playback_container"><form class="form" id="playback_speed_selection"><h3>Adjust Playback Speed</h3><label for="playback_rate">Adjust Audio/Video Playback Speed </label><div class="row"><div class="col-xs-2 col-lg-offset-2 text-right">Slower</div><div class="col-xs-7 col-lg-4"><input type="range"  name="playback_rate" id="playback_rate" min="0.5" max="1.75" step="any"></div><div class="col-xs-2">Faster</div></div><a href="#" id="playback_reset_btn" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-refresh"></span> Reset Playback Speed</a></form></div>';
 
 
 	$('#feature_controls').html(playback_speed_controls);
@@ -404,8 +491,10 @@ $().ready(function(){
 
 			if(privacy_storage == 0){
 				$('#privacy_storage_1').attr('checked','checked');
+        console.log('storage not allowed!');
 			}else{
 				$('#privacy_storage_0').attr('checked','checked');
+        console.log('storage allowed!');
 			}
 			if(privacy_analytics == 1){
 				$('#privacy_analytics_0').attr('checked','checked');
@@ -467,6 +556,7 @@ $().ready(function(){
 			delete_cookie('HELM_Open_Playback_Speed');
 			delete_cookie('HELM_Open_Narration_Autoplay');
 			delete_cookie('HELM_Open_Hide_Text');
+      delete_cookie('HELM_Open_Theme');
 			playback_speed = 1;
 			modify_playback(1);
 			privacy_cookies = 0;
