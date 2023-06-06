@@ -137,7 +137,7 @@ margin:5px 0 10px 5px;
 #dark_mode_selector{
 		display: flex;
 }
-#dark_mode_selector legend{display:none;}
+#dark_mode_selector legend{color:#fff;display:none;}
 #dark_mode_selector .dark_mode_option{
 		width:33%;
 		text-align:center;
