@@ -1,5 +1,11 @@
 RLO Master Template
 ========================
+Minor Update: 20230606
+Author: Aaron Fecowycz
+
+Description:
+
+Addditon of CSS color decleration to the theme selector legend as, even though it was hidden, was generating a contrast error in reviewing tools.
 
 Minor Update: 20230216
 Author: Aaron Fecowycz
