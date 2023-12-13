@@ -1,5 +1,11 @@
 RLO Master Template
 ========================
+Minor Update: 20231213
+Author: Aaron Fecowycz
+
+Modified the bootstrap CSS for the alert text colour to improve the small text colour contrast in response to feedback.
+
+
 Minor Update: 20230606
 Author: Aaron Fecowycz
 
