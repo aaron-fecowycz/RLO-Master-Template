@@ -1,5 +1,12 @@
 RLO Master Template
 ========================
+
+Minor Update: 20240111
+Author: Aaron Fecowycz
+
+Modified feedback.html to replace old JISC online survey with the V3 version and included a additional direct link to the feedback form to allow user to view directly (preventing iFrame usability issues).
+
+
 Minor Update: 20231213
 Author: Aaron Fecowycz
 
