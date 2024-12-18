@@ -908,6 +908,7 @@ input:checked + .slider:before {
 			opacity:0.6;
 			border-top:1px dashed #1145D4;
 	}
+	html.dark #doc_top_btn a:link, html.dark #doc_top_btn a:visited{color:#C5C5C5;}
 	/* START footer narration inclusion */
 	html.dark .narration_audio span {
 	    color:#C5C5C5;
