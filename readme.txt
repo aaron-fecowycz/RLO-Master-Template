@@ -1,6 +1,11 @@
 RLO Master Template
 ========================
 
+Minor Update: 20241218
+Author: Aaron Fecowycz
+
+Modfied CS/rlo-master.css to include addition of dark mode document top button text colour rule.
+
 Minor Update: 20240111
 Author: Aaron Fecowycz
 
